@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
-#!/usr/bin/env ruby
+
 # Last changes : 2016/10/31
-# DEBUG
-#require 'minitest/autorun'
 
 # DEBUG
+#require 'minitest/autorun'
 #class Game < MiniTest::Test
+
 class Game
     def intro
       puts "\n"
@@ -50,6 +50,13 @@ class Game
     obj.to_s == obj.to_i.to_s
   end
 
+  def control
+    big_winner if turn.to_i == @num && @try == 1
+    winner if turn.to_i == @num
+    puts "Trop petit!" if turn.to_i < @num
+    puts "Top grand!" if turn.to_i > @num
+  end
+
   def run
     turn = nil
     @try = 0
@@ -64,10 +71,7 @@ class Game
           redo
       end
       @try += 1
-      big_winner if turn.to_i == @num && @try == 1
-      winner if turn.to_i == @num
-      puts "Trop petit!" if turn.to_i < @num
-      puts "Top grand!" if turn.to_i > @num
+      control
     end
   end
 end
