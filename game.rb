@@ -8,6 +8,12 @@
 
 class Game
 
+    def initialize
+      @maxnum = 100
+    end
+
+    def intro
+      puts @maxnum
       puts "\n"
       puts "".ljust(24,"-").center(50)
       puts "|Game : Trouver le nombre|".center(50).upcase
@@ -15,14 +21,11 @@ class Game
       puts "\n\n"
       puts " compris entre 1 et #{@maxnum} ".center(50,"*")
       puts "\nPous pouvez choisir d'abandonner à l'aide de la commande 'quit'.\n\n"
-
-
-    def initialize
-      @maxnum = 100
     end
 
     def init_num
       @num = 1 + rand(@maxnum)
+      intro
     end
 
   def show_time
@@ -65,8 +68,7 @@ class Game
       @try += 1
       big_winner if turn.to_i == @num && @try == 1
       winner if turn.to_i == @num
-      puts "Trop petit!" if turn.to_i < @num
-      puts "Top grand!" if turn.to_i > @num
+      turn.to_i < @num ? (puts "Trop petit!") : (puts "Top grand!")
     end
   end
 end
