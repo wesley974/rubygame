@@ -8,21 +8,21 @@ class Game < MiniTest::Test
 
     def intro
       puts "\n"
-	    puts "".ljust(24,"-").center(50)
+      puts "".ljust(24,"-").center(50)
       puts "|Game : Trouver le nombre|".center(50).upcase
-	    puts "".ljust(24,"-").center(50)
+      puts "".ljust(24,"-").center(50)
       puts "\n\n"
       puts " compris entre 1 et #{@maxnum} ".center(50,"*")
       puts "\nPous pouvez choisir d'abandonner à l'aide de la commande 'quit'.\n\n"
     end
 
     def initialize
-        @maxnum = 100
-        intro
+      @maxnum = 100
+      intro
     end
 
     def init_num
-        @num = 1 + rand(@maxnum)
+      @num = 1 + rand(@maxnum)
     end
 
   def show_time
