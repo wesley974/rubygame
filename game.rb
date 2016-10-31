@@ -66,7 +66,7 @@ class Game
       @turn = gets.chomp
       if @turn == "quit" then
         exit
-        elsif is_a_number?(turn) == false then
+        elsif is_a_number?(@turn) == false then
           puts "Oh, entre un nombre !!!"
           redo
       end
