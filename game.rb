@@ -72,6 +72,7 @@ class Game
       turn.to_i < @num ? (puts "Too small!") : (puts "Too BIG!")
     end
   end
+
 end
 
 player = Game.new
