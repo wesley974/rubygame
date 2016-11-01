@@ -15,17 +15,16 @@ class Game
       @maxnum = 100
     end
 
-    def intro
+    def annonce
       title = "|Game : The magician|"
-      puts "\n" + "".ljust(TITLE,"-").center(SPC)
-      puts title.center(SPC).upcase + "\n" + "".ljust(TITLE,"-").center(SPC) + "\n\n"
+      puts "\n" + "".ljust(TITLE,"-").center(SPC) + "\n" + title.center(SPC).upcase + "\n" + "".ljust(TITLE,"-").center(SPC) + "\n\n"
     end
 
     def init_num
       @num = 1 + rand(@maxnum)
       teaser = "\sFind the number between 1 and #{@maxnum}\s"
       quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
-      intro
+      annonce
       puts teaser.center(SPC,"*") + "\n\n" + quit_cmd
     end
 
