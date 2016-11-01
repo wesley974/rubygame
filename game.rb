@@ -8,7 +8,6 @@
 
 class Game
 
-    TITLE = 19
     SPC = 50
 
     def initialize
@@ -17,7 +16,7 @@ class Game
 
     def annonce
       title = "|Game : The magician|"
-      puts "\n" + "".ljust(TITLE,"-").center(SPC) + "\n" + title.center(SPC).upcase + "\n" + "".ljust(TITLE,"-").center(SPC) + "\n\n"
+      puts "\n" + title.center(SPC)
     end
 
     def init_num
