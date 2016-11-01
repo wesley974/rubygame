@@ -20,10 +20,8 @@ class Game
       teaser = "\sFind the number between 1 and #{@maxnum}\s"
       quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
       puts "\n" + "".ljust(TITLE,"-").center(SPC)
-      puts title.center(SPC).upcase
-      puts "".ljust(TITLE,"-").center(SPC) + "\n\n"
-      puts teaser.center(SPC,"*") + "\n\n"
-      puts quit_cmd
+      puts title.center(SPC).upcase + "\n" + "".ljust(TITLE,"-").center(SPC) + "\n\n"
+      puts teaser.center(SPC,"*") + "\n\n" + quit_cmd
     end
 
     def init_num
@@ -61,7 +59,6 @@ class Game
   def run
     turn = nil
     @try = 0
-    puts "Let's go!"
     @start = Time.now
     while turn != @num
       print "Try ? "
