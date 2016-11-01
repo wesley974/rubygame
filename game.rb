@@ -28,8 +28,7 @@ class Game
     end
 
   def show_time
-    @stop = Time.now
-    puts "\nTime left : #{(@stop - @start).round} secondes\n"
+    puts "\nTime left : #{(Time.now - @check_time).round} secondes\n"
   end
 
   def winner
@@ -57,7 +56,7 @@ class Game
   def run
     turn = nil
     @try = 0
-    @start = Time.now
+    @check_time = Time.now
     while turn != @num
       print "Try ? "
       turn = gets.chomp
