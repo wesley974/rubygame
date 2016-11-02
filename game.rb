@@ -64,9 +64,13 @@ class Game
 
   def check(turn)
     @try += 1
+    turn.to_i < @num ? (puts "Too small!") : (puts "Too BIG!")
+    a_winner?(turn)
+  end
+
+  def a_winner?(turn)
     big_winner if turn.to_i == @num && @try == 1
     winner if turn.to_i == @num
-    turn.to_i < @num ? (puts "Too small!") : (puts "Too BIG!")
   end
 
   def run
