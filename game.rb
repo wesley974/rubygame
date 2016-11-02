@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 # Last changes : 2016/11/02
 
 # DEBUG
@@ -20,12 +21,19 @@ class Game
     title = "|Game : The magician|"
     puts "\n" + title.center(SPC)
     show_teaser
+    your_name
   end
 
   def show_teaser
     teaser = "\sFind the number between 1 and #{@maxnum}\s"
     quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
     puts teaser.center(SPC,"*") + "\n\n" + quit_cmd
+  end
+
+  def your_name
+    print "\nEnter your name : "
+    @name = gets.chomp.capitalize
+    puts "Let's play\n\n"
   end
 
   def show_time
@@ -46,7 +54,7 @@ class Game
   end
 
   def byebye
-    puts "\nGoodbye.\n\n"
+    puts "\nGoodbye #{@name}.\n\n"
     exit
   end
 
