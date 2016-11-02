@@ -13,6 +13,7 @@ class Game
   def initialize
     @maxnum = 100
     @num = 1 + rand(@maxnum)
+    @try = 0
     show_title
   end
 
@@ -50,8 +51,8 @@ class Game
     exit
   end
 
-  def is_a_number?(obj)
-    obj.to_s == obj.to_i.to_s
+  def is_a_number?(turn)
+    turn.to_s == turn.to_i.to_s
   end
 
   def ask
@@ -61,17 +62,20 @@ class Game
     return turn
   end
 
+  def check(turn)
+    @try += 1
+    big_winner if turn.to_i == @num && @try == 1
+    winner if turn.to_i == @num
+    turn.to_i < @num ? (puts "Too small!") : (puts "Too BIG!")
+  end
+
   def run
     turn = nil
-    @try = 0
     @check_time = Time.now
     while turn != @num
       turn = ask
       (puts "Please, a number !!!"; redo) unless is_a_number?(turn)
-      @try += 1
-      big_winner if turn.to_i == @num && @try == 1
-      winner if turn.to_i == @num
-      turn.to_i < @num ? (puts "Too small!") : (puts "Too BIG!")
+      check(turn)
     end
   end
 
