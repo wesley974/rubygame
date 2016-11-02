@@ -10,7 +10,7 @@ require 'fileutils'
 class Game
 
   SPC = 50
-  MAXNUM = 100
+  MAXNUM = 1_00 # 100
 
   def initialize
     @num = 1 + rand(MAXNUM)
