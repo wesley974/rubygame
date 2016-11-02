@@ -67,10 +67,7 @@ class Game
     @check_time = Time.now
     while turn != @num
       turn = ask
-      if is_a_number?(turn) == false
-          puts "Please, a number !!!"
-          redo
-      end
+      (puts "Please, a number !!!"; redo) unless is_a_number?(turn)
       @try += 1
       big_winner if turn.to_i == @num && @try == 1
       winner if turn.to_i == @num
