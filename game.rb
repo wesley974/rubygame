@@ -9,10 +9,10 @@
 class Game
 
   SPC = 50
+  MAXNUM = 100
 
   def initialize
-    @maxnum = 100
-    @num = 1 + rand(@maxnum)
+    @num = 1 + rand(MAXNUM)
     @try = 0
     show_title
   end
@@ -25,7 +25,7 @@ class Game
   end
 
   def show_teaser
-    teaser = "\sFind the number between 1 and #{@maxnum}\s"
+    teaser = "\sFind the number between 1 and #{MAXNUM}\s"
     quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
     puts teaser.center(SPC,"*") + "\n\n" + quit_cmd
   end
