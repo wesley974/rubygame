@@ -3,12 +3,11 @@
 # Last changes : 2016/11/02
 
 # DEBUG
-#require 'minitest/autorun'
-#class Game < MiniTest::Test
+# require 'minitest/autorun'
+# class Game < MiniTest::Test
 require 'fileutils'
 
 class Game
-
   SPC = 50
   MAXNUM = 1_00 # 100
 
@@ -20,7 +19,7 @@ class Game
   end
 
   def show_title
-    title = "|Game : The magician|"
+    title = '|Game : The magician|'
 
     puts "\n" + title.center(SPC)
 
@@ -32,7 +31,7 @@ class Game
     teaser = "\sFind the number between 1 and #{MAXNUM}\s"
     quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
 
-    puts teaser.center(SPC,"*") + "\n\n" + quit_cmd
+    puts teaser.center(SPC, '*') + "\n\n" + quit_cmd
   end
 
   def your_name
@@ -69,22 +68,23 @@ class Game
     exit
   end
 
-  def is_a_number?(turn)
+  def a_number?(turn)
     turn.to_s == turn.to_i.to_s
   end
 
   def ask
-    print "Try ? "
+    print 'Try ? '
     turn = gets.chomp
 
-    if turn == "quit" then byebye end
+    byebye if turn == 'quit'
+
     return turn
   end
 
   def check(turn)
     @try += 1
 
-    turn.to_i < @num ? (puts "Too small!") : (puts "Too BIG!")
+    turn.to_i < @num ? (puts 'Too small!') : (puts 'Too BIG!')
 
     a_winner?(turn)
   end
@@ -101,16 +101,14 @@ class Game
     while turn != @num
       turn = ask
 
-      (puts "Please, a number !!!"; redo) unless is_a_number?(turn)
+      (puts 'Please, a number !!!'; redo) unless a_number?(turn)
 
       check(turn)
     end
   end
-
 end
 
 class Records
-
   def initialize
     @@file_record = score.db
   end
