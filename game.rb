@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 # Last changes : 2016/11/02
 
 # DEBUG
