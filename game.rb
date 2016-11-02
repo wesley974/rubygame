@@ -57,6 +57,8 @@ class Game
   def ask
     print "Try ? "
     turn = gets.chomp
+    if turn == "quit" then byebye end
+    return turn
   end
 
   def run
@@ -65,9 +67,7 @@ class Game
     @check_time = Time.now
     while turn != @num
       turn = ask
-      if turn == "quit"
-        byebye
-        elsif is_a_number?(turn) == false
+      if is_a_number?(turn) == false
           puts "Please, a number !!!"
           redo
       end
