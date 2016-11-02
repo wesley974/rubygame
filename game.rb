@@ -54,13 +54,17 @@ class Game
     obj.to_s == obj.to_i.to_s
   end
 
+  def ask
+    print "Try ? "
+    turn = gets.chomp
+  end
+
   def run
     turn = nil
     @try = 0
     @check_time = Time.now
     while turn != @num
-      print "Try ? "
-      turn = gets.chomp
+      turn = ask
       if turn == "quit"
         byebye
         elsif is_a_number?(turn) == false
@@ -78,4 +82,3 @@ end
 
 player = Game.new
 player.run
-
