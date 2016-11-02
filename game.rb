@@ -15,12 +15,15 @@ class Game
   def initialize
     @num = 1 + rand(MAXNUM)
     @try = 0
+
     show_title
   end
 
   def show_title
     title = "|Game : The magician|"
+
     puts "\n" + title.center(SPC)
+
     show_teaser
     your_name
   end
@@ -28,12 +31,14 @@ class Game
   def show_teaser
     teaser = "\sFind the number between 1 and #{MAXNUM}\s"
     quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
+
     puts teaser.center(SPC,"*") + "\n\n" + quit_cmd
   end
 
   def your_name
     print "\nEnter your name : "
     @name = gets.chomp.capitalize
+
     puts "Let's play!\n\n"
   end
 
@@ -43,19 +48,24 @@ class Game
 
   def winner
     show_time
+
     puts "\n\nWe have a winner!\n"
     puts "#{@try} tries, good job !\n\n"
+
     byebye
   end
 
   def big_winner
     show_time
+
     puts "\n\nWow, amazing !!!\nWe have found our magician ?!\n\n"
+
     byebye
   end
 
   def byebye
     puts "\nGoodbye #{@name}.\n\n"
+
     exit
   end
 
@@ -66,13 +76,16 @@ class Game
   def ask
     print "Try ? "
     turn = gets.chomp
+
     if turn == "quit" then byebye end
     return turn
   end
 
   def check(turn)
     @try += 1
+
     turn.to_i < @num ? (puts "Too small!") : (puts "Too BIG!")
+
     a_winner?(turn)
   end
 
@@ -84,9 +97,12 @@ class Game
   def run
     turn = nil
     @check_time = Time.now
+
     while turn != @num
       turn = ask
+
       (puts "Please, a number !!!"; redo) unless is_a_number?(turn)
+
       check(turn)
     end
   end
