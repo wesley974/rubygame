@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Last changes : 2016/11/01
+# Last changes : 2016/11/02
 
 # DEBUG
 #require 'minitest/autorun'
@@ -8,24 +8,25 @@
 
 class Game
 
-    SPC = 50
+  SPC = 50
 
-    def initialize
-      @maxnum = 100
-    end
+  def initialize
+    @maxnum = 100
+    @num = 1 + rand(@maxnum)
+    show_title
+  end
 
-    def annonce
-      title = "|Game : The magician|"
-      puts "\n" + title.center(SPC)
-    end
+  def show_title
+    title = "|Game : The magician|"
+    puts "\n" + title.center(SPC)
+    show_teaser
+  end
 
-    def init_num
-      @num = 1 + rand(@maxnum)
-      teaser = "\sFind the number between 1 and #{@maxnum}\s"
-      quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
-      annonce
-      puts teaser.center(SPC,"*") + "\n\n" + quit_cmd
-    end
+  def show_teaser
+    teaser = "\sFind the number between 1 and #{@maxnum}\s"
+    quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
+    puts teaser.center(SPC,"*") + "\n\n" + quit_cmd
+  end
 
   def show_time
     puts "\nTime left : #{(Time.now - @check_time).round} secondes\n"
@@ -76,6 +77,5 @@ class Game
 end
 
 player = Game.new
-player.init_num
 player.run
 
