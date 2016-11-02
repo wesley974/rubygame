@@ -5,6 +5,7 @@
 # DEBUG
 #require 'minitest/autorun'
 #class Game < MiniTest::Test
+require 'fileutils'
 
 class Game
 
@@ -33,7 +34,7 @@ class Game
   def your_name
     print "\nEnter your name : "
     @name = gets.chomp.capitalize
-    puts "Let's play\n\n"
+    puts "Let's play!\n\n"
   end
 
   def show_time
@@ -88,6 +89,14 @@ class Game
       (puts "Please, a number !!!"; redo) unless is_a_number?(turn)
       check(turn)
     end
+  end
+
+end
+
+class Records
+
+  def initialize
+    @@file_record = score.db
   end
 
 end
