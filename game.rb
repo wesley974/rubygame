@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Last changes : 2016/11/02
+# Last changes : 2016/11/03
 
 # DEBUG
 # require 'minitest/autorun'
@@ -37,6 +37,8 @@ class Game
   def your_name
     print "\nEnter your name : "
     @name = gets.chomp.capitalize
+
+    @name = 'Guest' if @name.empty?
 
     puts "Let's play!\n\n"
   end
