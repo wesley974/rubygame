@@ -45,7 +45,7 @@ class Game
   end
 
   def show_time
-    puts "\nTime left : #{(Time.now - @check_time).round} secondes\n"
+    puts "\nTime left : #{(Time.now - @check_time).round} seconds\n"
   end
 
   def winner
