@@ -7,6 +7,7 @@
 # class Game < MiniTest::Test
 require 'fileutils'
 
+# The game core
 class Game
   SPC = 50
   MAXNUM = 1_00 # 100
@@ -103,18 +104,22 @@ class Game
     while turn != @num
       turn = ask
 
-      (puts 'Please, a number !!!'; redo) unless a_number?(turn)
+      # (puts 'Please, a number !!!'; redo) unless a_number?(turn)
+      if a_number?(turn) == false
+        puts 'Please, enter an integer'
+        redo
+      end
 
       check(turn)
     end
   end
 end
 
+# File records
 class Records
   def initialize
-    @@file_record = score.db
+    @file_record = score.db
   end
-
 end
 
 player = Game.new
