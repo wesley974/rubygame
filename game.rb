@@ -104,11 +104,7 @@ class Game
     while turn != @num
       turn = ask
 
-      # (puts 'Please, a number !!!'; redo) unless a_number?(turn)
-      if a_number?(turn) == false
-        puts 'Please, enter an integer'
-        redo
-      end
+      (puts 'Please, a number !!!'; redo) unless a_number?(turn)
 
       check(turn)
     end
