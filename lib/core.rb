@@ -50,6 +50,7 @@ class Core
 
     puts "\n\nWe have a winner!\n"
     puts "#{@try} tries, good job !\n\n"
+    puts "The magician was at #{@number}"
 
     byebye
   end
@@ -87,11 +88,24 @@ class Core
     turn.to_i < @num ? (puts 'Too small!') : (puts 'Too BIG!')
 
     a_winner?(turn)
+
+    larger_or_smaller
+
   end
 
   def a_winner?(turn)
     big_winner if turn.to_i == @num && @try == 1
     winner if turn.to_i == @num
+  end
+
+  def larger_or_smaller
+    puts "Enter a number to find out whether the our magician is a multiple of it?"
+    multiple = gets.chomp.to_i
+    if @num.to_i % multiple == 0
+      puts "You're correct he is! Now what will you do with this information"
+    else @num.to_i % multiple != 0
+      puts "So sorry, we're no closer to catching our magician"
+    end
   end
 
   def play
@@ -106,4 +120,8 @@ class Core
       check(turn)
     end
   end
+
+
+
+
 end
