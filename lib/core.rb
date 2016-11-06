@@ -1,9 +1,8 @@
-#!/usr/bin/env ruby
-
 # DEBUG
 # require 'minitest/autorun'
 # class Core < MiniTest::Test
-require 'fileutils'
+
+require_relative 'score'
 
 # The game core
 class Core
@@ -106,12 +105,5 @@ class Core
 
       check(turn)
     end
-  end
-end
-
-# File records
-class Records
-  def initialize
-    @file_record = score.db
   end
 end
