@@ -86,7 +86,13 @@ class Core
 
     puts 'Too small!' if turn.to_i < @num
     puts 'Too Big!' if turn.to_i > @num
-    turn.to_i == @num ? a_winner?(turn) : hint(turn)
+
+    if turn.to_i == @num
+      a_winner?(turn)
+    else
+      hint(turn)
+    end
+
   end
 
   def a_winner?(turn)
