@@ -90,8 +90,9 @@ class Core
   end
 
   def a_winner?(turn)
-    big_winner if turn.to_i == @num && @try == 1
-    winner if turn.to_i == @num
+    if turn.to_i == @num
+      @try == 1 ? big_winner : winner
+    end
   end
 
   def play
