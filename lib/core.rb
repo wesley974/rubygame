@@ -84,8 +84,8 @@ class Core
   def check(turn)
     @try += 1
 
-    turn.to_i < @num ? (puts 'Too small!') : (puts 'Too BIG!')
-
+    puts 'Too small!' if turn.to_i < @num
+    puts 'Too Big!' if turn.to_i > @num
     a_winner?(turn)
   end
 
