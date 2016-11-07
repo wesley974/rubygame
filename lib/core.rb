@@ -88,8 +88,6 @@ class Core
     puts 'Too Big!' if turn.to_i > @num
 
     a_winner?(turn)
-    end
-
   end
 
   def a_winner?(turn)
