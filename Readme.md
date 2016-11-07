@@ -3,5 +3,4 @@
 Find a number between 1 and 100.
 
 <h3>How to run ?</h3>
-<code>chmod +x game.rb</code><br>
 <code>./game.rb</code>
