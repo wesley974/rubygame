@@ -87,10 +87,7 @@ class Core
     puts 'Too small!' if turn.to_i < @num
     puts 'Too Big!' if turn.to_i > @num
 
-    if turn.to_i == @num
-      a_winner?(turn)
-    else
-      hint(turn)
+    a_winner?(turn)
     end
 
   end
@@ -99,10 +96,6 @@ class Core
     if turn.to_i == @num
       @try == 1 ? big_winner : winner
     end
-  end
-
-  def hint(turn)
-    puts 'Hint : your number is a multiple' if @num % turn.to_i == 0
   end
 
   def play
