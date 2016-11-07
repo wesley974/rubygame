@@ -2,5 +2,5 @@
 
 Find a number between 1 and 100.
 
-<h3>How to run ?</h3>
+<h3>How to run the game?</h3>
 <code>./game.rb</code>
