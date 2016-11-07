@@ -95,6 +95,10 @@ class Core
     end
   end
 
+  def hint(turn)
+    puts 'Hint : your number is a multiple' if @num % turn.to_i == 0
+  end
+
   def play
     turn = nil
     @check_time = Time.now
@@ -105,6 +109,7 @@ class Core
       (puts 'Please, a number !!!'; redo) unless a_number?(turn)
 
       check(turn)
+      hint(turn)
     end
   end
 end
