@@ -3,6 +3,7 @@
 # class Core < MiniTest::Test
 
 require_relative 'score'
+require_relative 'show'
 
 # The game core
 class Core
@@ -13,32 +14,19 @@ class Core
     @num = 1 + rand(MAXNUM)
     @try = 0
 
-    show_title
-  end
-
-  def show_title
-    title = '|Game : The magician|'
-
-    puts "\n" + title.center(SPC)
-
-    show_teaser
+    Show.title
+    Show.teaser
     your_name
   end
 
-  def show_teaser
-    teaser = "\sFind the number between 1 and #{MAXNUM}\s"
-    quit_cmd = "\nYou can abandon with the command 'quit'.\n\n"
-
-    puts teaser.center(SPC, '*') + "\n\n" + quit_cmd
-  end
-
   def your_name
-    print "\nEnter your name : "
+    Show.name
+
     @name = gets.chomp.capitalize
-
     @name = 'Guest' if @name.empty?
+    byebye if @name == 'Quit'
 
-    puts "Let's play!\n\n"
+    Show.play
   end
 
   def show_time
@@ -63,6 +51,7 @@ class Core
   end
 
   def byebye
+    @name = 'Guest' if @name == 'Quit'
     puts "\nGoodbye #{@name}.\n\n"
 
     exit
