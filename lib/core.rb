@@ -36,7 +36,7 @@ class Core
   def winner
     show_time
 
-    puts "\n\nWe have a winner!\n"
+    Show.winner
     puts "#{@try} tries, good job !\n\n"
 
     byebye
@@ -45,7 +45,7 @@ class Core
   def big_winner
     show_time
 
-    puts "\n\nWow, amazing !!!\nWe have found our magician ?!\n\n"
+    Show.big_winner
 
     byebye
   end
@@ -62,7 +62,7 @@ class Core
   end
 
   def ask
-    print 'Try ? '
+    Show.try
     turn = gets.chomp
 
     byebye if turn == 'quit'
@@ -73,8 +73,8 @@ class Core
   def check(turn)
     @try += 1
 
-    puts 'Too small!' if turn.to_i < @num
-    puts 'Too Big!' if turn.to_i > @num
+    Show.smaller if turn.to_i < @num
+    Show.bigger if turn.to_i > @num
 
     a_winner?(turn)
   end
@@ -92,7 +92,7 @@ class Core
     while turn != @num
       turn = ask
 
-      (puts 'Please, a number !!!'; redo) unless a_number?(turn)
+      (Show.warn_number; redo) unless a_number?(turn)
 
       check(turn)
     end

@@ -20,4 +20,28 @@ class Show
   def self.play
     puts "Let's play!\n\n"
   end
+
+  def self.try
+    print 'Try ? '
+  end
+
+  def self.smaller
+    puts 'Too small!'
+  end
+
+  def self.bigger
+    puts 'Too Big!'
+  end
+
+  def self.warn_number
+    puts 'Please, a number !!!'
+  end
+
+  def self.winner
+    puts "\n\nWe have a winner!\n"
+  end
+
+  def self.big_winner
+    puts "\n\nWow, amazing !!!\nWe have found our magician ?!\n\n"
+  end
 end
