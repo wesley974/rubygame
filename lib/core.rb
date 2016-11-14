@@ -2,8 +2,8 @@
 # require 'minitest/autorun'
 # class Core < MiniTest::Test
 
-require_relative 'score'
-require_relative 'show'
+require 'score'
+require 'show'
 
 # The game core
 class Core
