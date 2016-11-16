@@ -1,5 +1,6 @@
 require 'fileutils'
 
-# manage score file
+# Manage score file
 class Score
+	
 end
