@@ -14,7 +14,7 @@ class Show
   end
 
   def self.name
-    print "\nEnter your name : "
+    print "\nEnter your name :\s"
   end
 
   def self.play
@@ -22,7 +22,7 @@ class Show
   end
 
   def self.try
-    print 'Try ? '
+    print "Try ?\s"
   end
 
   def self.smaller
