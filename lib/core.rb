@@ -14,8 +14,8 @@ class Core
     @num = 1 + rand(MAXNUM)
     @try = 0
 
-    Show.title
-    Show.teaser
+    puts Show.title
+    puts Show.teaser
     your_name
   end
 
