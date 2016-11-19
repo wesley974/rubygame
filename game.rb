@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 APP_ROOT = File.dirname(__FILE__)
 
-$:.unshift(File.join("#{APP_ROOT}","lib"))
+# learning : $LOAD_PATH = $:
+$LOAD_PATH.unshift(File.join(APP_ROOT.to_s, 'lib'))
 
 require 'core'
 

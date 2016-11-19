@@ -67,7 +67,7 @@ class Core
 
     byebye if turn == 'quit'
 
-    return turn
+    turn
   end
 
   def check(turn)
