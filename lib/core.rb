@@ -80,7 +80,7 @@ class Core
   end
 
   def a_winner?(turn)
-    return unless turn.to_i == @num
+    return false unless turn.to_i == @num
     @try == 1 ? big_winner : winner
   end
 
