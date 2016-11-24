@@ -1,6 +1,4 @@
-# DEBUG
-# require 'minitest/autorun'
-# class Core < MiniTest::Test
+# DEBUG : rubocop tool
 
 require 'score'
 require 'show'
