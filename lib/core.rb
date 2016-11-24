@@ -12,21 +12,23 @@ class Core
   MAXNUM = 1_00 # 100
 
   def initialize
-    # Initialize the secret number and the try variable
     @num = 1 + rand(MAXNUM)
     @try = 0
 
     Show.title
     Show.teaser
+
+    @name = 'Guest'
     your_name
   end
 
   def your_name
     Show.name
 
-    @name = gets.chomp.capitalize
-    @name = 'Guest' if @name.empty?
-    byebye if @name == 'Quit'
+    # Get your name
+    try_a_name = gets.chomp.capitalize
+    @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
+    byebye if try_a_name == 'Quit'
 
     Show.play
   end
@@ -53,7 +55,6 @@ class Core
   end
 
   def byebye
-    @name = 'Guest' if @name == 'Quit'
     puts "\nGoodbye #{@name}.\n\n"
 
     exit
