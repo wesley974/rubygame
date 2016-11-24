@@ -8,3 +8,5 @@ require 'core'
 
 player = Core.new
 player.play
+
+# Codebeat score : 56,13
