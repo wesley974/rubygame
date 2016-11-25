@@ -10,8 +10,8 @@ class Core
   MAXNUM = 1_00 # 100
 
   def initialize
+    # Generate the secret number
     @num = 1 + rand(MAXNUM)
-    @try = 0
 
     Show.title
     Show.teaser
@@ -86,6 +86,7 @@ class Core
   end
 
   def play
+    @try = 0
     turn = nil
     @check_time = Time.now
 
