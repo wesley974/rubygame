@@ -10,8 +10,9 @@ class Core
   MAXNUM = 1_00 # 100
 
   def initialize
-    # Generate the secret number
+    # Generate the secret number and the try number
     @num = 1 + rand(MAXNUM)
+    @try = 0
 
     Show.title
     Show.teaser
@@ -32,7 +33,7 @@ class Core
   end
 
   def show_time
-    puts "\nTime left : #{(Time.now - @check_time).round} seconds\n"
+    puts "\nTime left : #{(Time.now - @start_time).round} seconds\n"
   end
 
   def winner
@@ -86,9 +87,8 @@ class Core
   end
 
   def play
-    @try = 0
     turn = nil
-    @check_time = Time.now
+    @start_time = Time.now
 
     while turn != @num
       turn = ask
