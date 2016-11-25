@@ -11,8 +11,8 @@ class Core
 
   def initialize
     # Generate the secret number and the tries number
-    @num = 1 + rand(MAXNUM)
-    @try = 0
+    @secret = 1 + rand(MAXNUM)
+    @tries = 0
 
     Show.title
     Show.teaser
@@ -39,7 +39,7 @@ class Core
   def winner
     show_time
     Show.winner
-    puts "#{@try} tries, good job !\n\n"
+    puts "#{@tries} tries, good job !\n\n"
     byebye
   end
 
@@ -68,24 +68,24 @@ class Core
   end
 
   def check(turn)
-    @try += 1
+    @tries += 1
 
-    Show.smaller if turn.to_i < @num
-    Show.bigger if turn.to_i > @num
+    Show.smaller if turn.to_i < @secret
+    Show.bigger if turn.to_i > @secret
 
     a_winner?(turn)
   end
 
   def a_winner?(turn)
-    return false unless turn.to_i == @num
-    @try == 1 ? big_winner : winner
+    return false unless turn.to_i == @secret
+    @tries == 1 ? big_winner : winner
   end
 
   def play
     turn = nil
     @start_time = Time.now
 
-    while turn != @num
+    while turn != @secret
       turn = ask
 
       (Show.warn_number; redo) unless a_number?(turn)
