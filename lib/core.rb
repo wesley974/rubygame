@@ -54,43 +54,43 @@ class Core
     exit
   end
 
-  def a_number?(turn)
-    turn.to_s == turn.to_i.to_s
+  def a_number?(answer)
+    answer.to_s == answer.to_i.to_s
   end
 
-  def ask
+  def ask_a_number
     Show.try
-    turn = gets.chomp
+    answer = gets.chomp
 
-    byebye if turn == 'quit'
+    byebye if answer == 'quit'
 
-    turn
+    answer
   end
 
-  def check(turn)
+  def check(answer)
     @tries += 1
 
-    Show.smaller if turn.to_i < @secret
-    Show.bigger if turn.to_i > @secret
+    Show.smaller if answer.to_i < @secret
+    Show.bigger if answer.to_i > @secret
 
-    a_winner?(turn)
+    a_winner?(answer)
   end
 
-  def a_winner?(turn)
-    return false unless turn.to_i == @secret
+  def a_winner?(answer)
+    return false unless answer.to_i == @secret
     @tries == 1 ? big_winner : winner
   end
 
   def play
-    turn = nil
     @start_time = Time.now
+    answer = nil
 
-    while turn != @secret
-      turn = ask
+    while answer != @secret
+      answer = ask_a_number
 
-      (Show.warn_number; redo) unless a_number?(turn)
+      (Show.warn_number; redo) unless a_number?(answer)
 
-      check(turn)
+      check(answer)
     end
   end
 end
