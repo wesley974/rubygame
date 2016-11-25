@@ -10,7 +10,7 @@ class Core
   MAXNUM = 1_00 # 100
 
   def initialize
-    # Generate the secret number and the try number
+    # Generate the secret number and the tries number
     @num = 1 + rand(MAXNUM)
     @try = 0
 
