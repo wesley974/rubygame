@@ -38,24 +38,19 @@ class Core
 
   def winner
     show_time
-
     Show.winner
     puts "#{@try} tries, good job !\n\n"
-
     byebye
   end
 
   def big_winner
     show_time
-
     Show.big_winner
-
     byebye
   end
 
   def byebye
     puts "\nGoodbye #{@name}.\n\n"
-
     exit
   end
 
