@@ -1,8 +1,10 @@
 ## Tasks to complete
 
-# 1 - Put all output messages in show.rb library 
+# 1 - Put all output messages in show.rb library
 
-How to communicate between classes (using instance, variable, constants...)
+How to communicate between classes (using instance, variable, constants...) ?
+
+Replace this (core.rb) :
 
 	puts "\nTime left : #{(Time.now - @start_time).round} seconds\n"
 
@@ -10,7 +12,7 @@ How to communicate between classes (using instance, variable, constants...)
 
 	puts "\nGoodbye #{@name}.\n\n"
 
-replace them by (in the core.rb) :
+by (core.rb) :
 
 	Show.your_time
 
@@ -32,7 +34,7 @@ Refactoring ?
 
 # 3 - Add a score file
 
-How to deal with this ? 
+How to deal with this ?
 
 - Record the best 3 times (name + time)
 - Show the score just before 'Enter your name'
