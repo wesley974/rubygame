@@ -2,6 +2,8 @@
 
 # 1 - Put all output messages in show.rb library 
 
+How to communicate between classes (using instance, variable, constants...)
+
 	puts "\nTime left : #{(Time.now - @start_time).round} seconds\n"
 
 	puts "#{@tries} tries, good job !\n\n"
@@ -19,6 +21,8 @@ replace them by (in the core.rb) :
 
 # 2 - Fix the Rubocop issues
 
+Refactoring ?
+
 	lib/core.rb:91:7: C: Don't use parentheses around a method call.
       (Show.warn_number; redo) unless a_number?(answer)
       ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -27,6 +31,8 @@ replace them by (in the core.rb) :
                        ^
 
 # 3 - Add a score file
+
+How to deal with this ? 
 
 - Record the best 3 times (name + time)
 - Show the score just before 'Enter your name'
