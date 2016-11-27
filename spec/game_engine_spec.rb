@@ -30,7 +30,7 @@ Rspec.describe GameEngine do
     context "a Magician" do
      expect(answer).to eq(secret)
      expect(tries).to eq(1)
-    do
+    end
 
     context "a winner" do
       expect(answer).to eq(secret)
