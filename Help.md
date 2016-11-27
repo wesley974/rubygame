@@ -36,7 +36,7 @@ Refactoring ?
 
 How to deal with this ?
 
-- Record the best 3 times (name + time)
+- Record the best 3 times (name + tries_number + time)
 - Show the score just before 'Enter your name'
 
 # 4 - Improve the code
