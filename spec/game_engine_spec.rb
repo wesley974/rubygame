@@ -1,3 +1,5 @@
+require_relative '../lib/game_engine.rb'
+
 RSpec.describe GameEngine do
   describe "#initialize" do
     it "initialize a max number" # maxnum
