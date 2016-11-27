@@ -4,20 +4,6 @@ Rspec.describe GameEngine do
     it "initialize tries number" # tries
   end
 
-  describe "#your_name" do
-    it "set default name to 'Guess'" # missing_name
-    it "ask for your name" # name
-    it "test if you wish to quit the game" # == 'quit'
-  end
-
-  describe "#ask" do
-    it "ask for a number" # answer
-  end
-
-  describe "#bybye" do
-    it "exit the game"
-  end
-
   describe "#a_number?" do
     it "test if it is an integer"
   end
