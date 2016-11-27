@@ -8,7 +8,7 @@ RSpec.describe GameEngine do
   end
 
   describe "#a_number?" do
-    it "test if it is an integer" do
+    it "test if your number is an integer" do
       expect(answer).to be_an(integer)
     end
   end
