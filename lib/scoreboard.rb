@@ -1,5 +1,5 @@
 require 'fileutils'
 
 # Manage score file
-class Score
+class Scoreboard
 end
