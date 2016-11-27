@@ -4,8 +4,13 @@ class Debug
     @secret = 50
   end
 
+  def ask
+    print 'number ?'
+    @answer = gets.chomp.to_i
+  end
+
   def check(tries)
-    case
+    case @answer
     when @answer < @secret then 'Too small!'
     when @answer > @secret then 'Too big!'
     when (@answer == @secret) && (tries == 1) then the_magician
@@ -19,9 +24,7 @@ class Debug
 
     while @answer != @secret
       tries += 1
-      print 'number ?'
-      @answer = gets.chomp.to_i
-
+      ask
       puts check(tries)
     end
   end
