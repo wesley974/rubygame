@@ -1,10 +1,15 @@
 Rspec.describe GameEngine do
   describe "#initialize" do
-    it "initialiaze a max number" # maxnum
+    context "initialiaze a max number" do
+      expect(maxnum).not_to be_empty # maxnum
+    end
+
     it "initialize secret number" # secret
-    it "initialize tries number" # tries
-    expect(maxnum).not_to be_empty
-    expect(tries).to be_empty
+
+    context "initialize tries number" do
+      expect(tries).to be_empty # tries
+    end
+
   end
 
   describe "#a_number?" do
