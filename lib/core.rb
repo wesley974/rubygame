@@ -1,6 +1,6 @@
 # DEBUG : rubocop tool
 
-require 'score'
+require 'scoreboard'
 require 'show'
 
 # The game core
