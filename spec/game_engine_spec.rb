@@ -1,4 +1,4 @@
-Rspec.describe GameEngine do
+RSpec.describe Core do
   describe "#initialize" do
     it "initialiaze a max number" # maxnum
     it "initialize secret number" # secret
