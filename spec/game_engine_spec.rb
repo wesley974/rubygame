@@ -5,6 +5,7 @@ RSpec.describe GameEngine do
     it "initialize a max number" # maxnum
     it "initialize secret number" # secret
     it "initialize tries number" # tries
+    it "initialize time" # start_time
   end
 
   describe "#a_number?" do
@@ -27,11 +28,6 @@ RSpec.describe GameEngine do
 
     context "too bigger" do
       expect(answer).to be > secret
-    end
-
-    context "a Magician" do
-     expect(answer).to eq(secret)
-     expect(tries).to eq(1)
     end
 
     context "a winner" do
