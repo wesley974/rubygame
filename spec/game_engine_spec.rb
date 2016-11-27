@@ -20,6 +20,7 @@ RSpec.describe GameEngine do
     end
 
     it "test if your number is a integer" # a_number(answer)
+
     it "increase" # tries + 1
 
     context "too smaller" do
