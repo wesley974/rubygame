@@ -1,5 +1,5 @@
-# The core game
-class Core
+# The game engine
+class GameEngine
   MAXNUM = 1_00 # 100
 
   def initialize
@@ -18,5 +18,5 @@ class Core
   end
 end
 
-# player = Core.new
+# player = GameEngine.new
 # player.guess(50)
