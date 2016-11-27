@@ -5,8 +5,6 @@ require 'show'
 
 # The game core
 class Core
-  # Declare constants
-  SPC = 50
   MAXNUM = 1_00 # 100
 
   def initialize

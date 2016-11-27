@@ -1,7 +1,7 @@
-require_relative '../lib/game_engine' # here is class we are testing
+require_relative '../lib/mentor_core' # here is class we are testing
 
-describe GameEngine do
-  subject { GameEngine.new }
+describe Core do
+  subject { Core.new }
 
   describe '#initialize' do
     it 'sets the number' do

@@ -1,16 +1,17 @@
 # Show output messages
 class Show
+  SPACES = 50
   def self.title
     title = '|Game : The magician|'
 
-    puts "\n #{title.center(Core::SPC)}"
+    puts "\n #{title.center(SPACES)}"
   end
 
   def self.teaser
     teaser = "\sFind the number between 1 and #{Core::MAXNUM}\s"
     quit = "\nYou can abandon with the command 'quit'.\n\n"
 
-    puts "#{teaser.center(Core::SPC, '*')} \n\n #{quit}"
+    puts "#{teaser.center(SPACES, '*')} \n\n #{quit}"
   end
 
   def self.name
