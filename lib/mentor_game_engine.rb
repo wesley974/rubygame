@@ -1,7 +1,6 @@
 # The game engine
 class GameEngine
   MAXNUM = 1_00 # 100
-
   def initialize
     @secret = 1 + rand(MAXNUM)
     @attempts = 0
@@ -13,7 +12,6 @@ class GameEngine
   end
 
   def guess(number)
-
     result = 'too big' if number.to_i > @secret
     result = 'too small' if number.to_i < @secret
     result = 'a winner' if number.to_i == @secret
@@ -22,7 +20,7 @@ class GameEngine
     result
   end
 
-  def attempts
+  def tries
     @attempts
   end
 
@@ -31,5 +29,7 @@ class GameEngine
   end
 end
 
-# player = GameEngine.new
-# player.guess(50)
+# player = GameEngine.new => start the engine
+# player.guess(50) => guess
+# player.tries => get the attempts number
+# player.time => get time left in seconds
