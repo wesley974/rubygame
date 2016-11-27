@@ -1,6 +1,6 @@
-RSpec.describe Core do
+RSpec.describe GameEngine do
   describe "#initialize" do
-    it "initialiaze a max number" # maxnum
+    it "initialize a max number" # maxnum
     it "initialize secret number" # secret
     it "initialize tries number" # tries
   end
