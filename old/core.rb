@@ -4,7 +4,7 @@ require 'scoreboard'
 require 'show'
 
 # The game core
-class Core
+class CoreOld
   MAXNUM = 1_00 # 100
 
   def initialize
