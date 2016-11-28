@@ -1,5 +1,8 @@
+require 'core'
+require 'scoreboard'
+
 # Show output messages
-class Show
+class UserInterface
   SPACES = 50
   def self.title
     title = '|Game : The magician|'
