@@ -4,9 +4,7 @@ APP_ROOT = File.dirname(__FILE__)
 # Learning : $LOAD_PATH = $:
 $LOAD_PATH.unshift(File.join(APP_ROOT.to_s, 'lib'))
 
-require 'core'
+require 'user_interface'
 
-player = Core.new
+player = User_interface.new
 player.play
-
-# Codebeat score : 56,13
