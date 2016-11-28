@@ -1,12 +1,12 @@
-require_relative '../lib/mentor_core' # here is class we are testing
+require_relative '../lib/core' # here is class we are testing
 
 describe Core do
   subject { Core.new }
 
   describe '#initialize' do
-    it 'sets the number' do
-      expect(subject.number).to be > 0
-      expect(subject.number).to be < 100
+    it 'sets the secret number' do
+      expect(subject.secret).to be > 0
+      expect(subject.secret).to be < 100
     end
   end
 
