@@ -1,5 +1,5 @@
 # The game engine
-class GameEngine
+class Core
   MAXNUM = 1_00 # 100
   def initialize
     @secret = 1 + rand(MAXNUM)
@@ -29,8 +29,8 @@ class GameEngine
 end
 
 # irb
-# require_relative 'mentor_game_engine'
-# player = GameEngine.new => start the engine
+# require_relative 'core'
+# player = Core.new => start the engine
 # player.guess(50) => guess
 # player.guess('test') => 'not a number'
 # player.tries => get the attempts number
