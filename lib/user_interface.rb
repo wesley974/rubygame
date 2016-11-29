@@ -32,10 +32,18 @@ class UserInterface
   end
 
   def ask
-    print "Try?\s"
-    answer = gets.chomp
-    bybye if answer == 'quit'
+    answer = nil
+    while a_number?(answer) != true
+      print "Try?\s"
+      answer = gets.chomp
+      bybye if answer == 'quit'
+      puts 'Please, a number.' unless a_number?(answer)
+    end
     answer
+  end
+
+  def a_number?(number)
+    number.to_s == number.to_i.to_s
   end
 
   def warn_number
@@ -62,11 +70,11 @@ class UserInterface
       result = player.guess(ask)
       puts result
     end
-    check_winner(player.tries)
+    check_winner(player.tries, player.time)
   end
 
-  def check_winner(tries)
+  def check_winner(tries, time)
     tries == 1 ? big_winner : winner
-    puts "\s In #{tries} attempts!\n"
+    puts "\s In #{tries} attempts and in #{time} seconds!\n\n"
   end
 end
