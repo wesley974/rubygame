@@ -3,40 +3,42 @@ class Core
   RANGE = 1..1_00 # 1 to 100
   def initialize
     @secret = rand(RANGE)
-    @attempts = 0
+    @tries = 0
     @start_time = Time.new
   end
 
-  def cheat
-    @secret
-  end
+  # def secret
+  #  @secret
+  # end
+  attr_reader :secret
 
-  #def a_number?(number)
+  # def a_number?(number)
   #  number.to_s == number.to_i.to_s
-  #end
+  # end
 
   def guess(number)
+    @tries += 1
     result = 'too big' if number.to_i > @secret
     result = 'too small' if number.to_i < @secret
     result = 'a winner' if number.to_i == @secret
-    #a_number?(number) ? @attempts += 1 : result = 'not a number'
+    # a_number?(number) ? @attempts += 1 : result = 'not a number'
     result
   end
 
-  def tries
-    @attempts
-  end
+  attr_reader :tries
 
   def time
     (Time.now - @start_time).round
   end
 end
 
+# Debug with : rubocop lib/core.rb
+
 # TEST With irb
 # --------------------------------------
-# require_relative 'core'
+# require_relative 'lib/core'
 # player = Core.new => start the engine
 # player.guess(50) => result
-# player.cheat => give the secret number!
-# player.tries => get the attempts number
+# player.secret => give the secret number!
+# player.tries => get the tries number
 # player.time => get time left in seconds
