@@ -12,10 +12,6 @@ class Core
   # end
   attr_reader :secret
 
-  # def a_number?(number)
-  #  number.to_s == number.to_i.to_s
-  # end
-
   def guess(number)
     @tries += 1
     result = 'too big' if number.to_i > @secret
