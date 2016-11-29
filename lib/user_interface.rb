@@ -53,6 +53,10 @@ class UserInterface
 
   def play
     player = Core.new
-    puts player.guess(ask)
+    result = nil
+    while result != 'a winner'
+      result = player.guess(ask)
+      puts result
+    end
   end
 end
