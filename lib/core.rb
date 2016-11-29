@@ -7,6 +7,10 @@ class Core
     @start_time = Time.new
   end
 
+  def cheat
+    @secret
+  end
+
   def a_number?(number)
     number.to_s == number.to_i.to_s
   end
