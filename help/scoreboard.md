@@ -1,22 +1,14 @@
-Rspec.describe ScoreBoard do
+# initialize
+  Create the file if not exists
 
-  describe "#initialize" do
-    it "Create the file if not exists" # magician.score
-  end
+# view
+  show the score
 
-  describe "#view" do
-    it "show the score"
-  end
+# add
+  add a new record
 
-  describe "#add" do
-    it "add a new record" # name + tries + time
+# check
+  check if the winner has a better time than the 3 records
 
-  describe "#check" do
-    it "check if the winner has a better time than the 3 records" # time ?
-  end
-
-  describe "#replace" do
-    it "replace an existing record"
-  end
-
-end
+# replace
+  replace an existing record

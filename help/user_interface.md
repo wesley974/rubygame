@@ -1,22 +1,16 @@
-Rspec.describe UserInterface do
+# initialize
+  show the title
+  show the teaser
+  show the rules
 
-  describe "#initialize" do
-    it "show the title"
-    it "show the teaser"
-    it "show the rules"
-  end
+# your_name
+  set default name to 'Guess'
+  ask for your name
+  test if you wish to quit the game
 
-  describe "#your_name" do
-    it "set default name to 'Guess'" # missing_name
-    it "ask for your name" # name
-    it "test if you wish to quit the game" # == 'quit'
-  end
+# ask
+  ask for a number
+  check if it is really a number
 
-  describe "#ask" do
-    it "ask for a number" # answer
-  end
-
-  describe "#bybye" do
-    it "exit the game"
-  end
-end
+# bybye
+  exit the game
