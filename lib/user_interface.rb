@@ -6,21 +6,23 @@ class UserInterface
   SPACES = 50
   def initialize
     @name = 'guest'
-    title
-    teaser
+    header '|Game : The magicians|'
+    instruction "Find the number between 1 and #{Core::RANGE}"
+    exit_message "You can abandon with the command 'quit'"
     set_name
     play
   end
 
-  def title
-    title = '|Game : The magician|'
+  def header(title)
     puts "\n #{title.center(SPACES)}"
   end
 
-  def teaser
-    teaser = "\sFind the number between 1 and #{Core::RANGE}\s"
-    quit = "\nYou can abandon with the command 'quit'.\n\n"
-    puts "#{teaser.center(SPACES, '*')} \n\n #{quit}"
+  def instruction(rules)
+    puts "\s#{rules}\s".center(SPACES, '*')
+  end
+
+  def exit_message(rules)
+    puts "\n#{rules}.\n\n"
   end
 
   def set_name
