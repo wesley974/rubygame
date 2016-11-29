@@ -36,7 +36,8 @@ end
 # --------------------------------------
 # require_relative 'core'
 # player = Core.new => start the engine
-# player.guess(50) => guess
+# player.guess(50) => result
 # player.guess('test') => 'not a number'
+# player.cheat => give the secret number!
 # player.tries => get the attempts number
 # player.time => get time left in seconds
