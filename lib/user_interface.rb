@@ -42,6 +42,10 @@ class UserInterface
     puts 'Please, a number !!!'
   end
 
+  def winner
+    puts "\n We have a winner, #{@name}!"
+  end
+
   def big_winner
     puts "\n\nWow, amazing !!!\nWe have found our magician ?!\n\n"
   end
@@ -58,5 +62,11 @@ class UserInterface
       result = player.guess(ask)
       puts result
     end
+    check_winner(player.tries)
+  end
+
+  def check_winner(tries)
+    tries == 1 ? big_winner : winner
+    puts "\s In #{tries} attempts!\n"
   end
 end
