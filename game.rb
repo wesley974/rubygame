@@ -7,4 +7,3 @@ $LOAD_PATH.unshift(File.join(APP_ROOT.to_s, 'lib'))
 require 'user_interface'
 
 player = UserInterface.new
-player.play

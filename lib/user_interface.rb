@@ -1,51 +1,58 @@
 require 'core'
 require 'scoreboard'
 
-# Show output messages
+# The user interface
 class UserInterface
   SPACES = 50
-  def self.title
-    title = '|Game : The magician|'
+  def initialize
+    title
+    teaser
+    set_name
+  end
 
+  def title
+    title = '|Game : The magician|'
     puts "\n #{title.center(SPACES)}"
   end
 
-  def self.teaser
-    teaser = "\sFind the number between 1 and #{Core::MAXNUM}\s"
+  def teaser
+    teaser = "\sFind the number between 1 and #{Core::RANGE}\s"
     quit = "\nYou can abandon with the command 'quit'.\n\n"
-
     puts "#{teaser.center(SPACES, '*')} \n\n #{quit}"
   end
 
-  def self.name
+  def set_name
+    @name = 'guest'
     print "\nEnter your name :\s"
-  end
-
-  def self.play
+    try_a_name = gets.chomp.capitalize
+    @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
+    bybye if try_a_name == 'Quit'
     puts "Let's play!\n\n"
+    play
   end
 
-  def self.try
-    print "Try ?\s"
+  def ask
+    print "Try?\s"
+    answer = gets.chomp
+    bybye if answer == 'quit'
+    answer
   end
 
-  def self.smaller
-    puts 'Too small!'
-  end
-
-  def self.bigger
-    puts 'Too Big!'
-  end
-
-  def self.warn_number
+  def warn_number
     puts 'Please, a number !!!'
   end
 
-  def self.winner
-    puts "\n\nWe have a winner!\n"
+  def big_winner
+    puts "\n\nWow, amazing !!!\nWe have found our magician ?!\n\n"
   end
 
-  def self.big_winner
-    puts "\n\nWow, amazing !!!\nWe have found our magician ?!\n\n"
+  def bybye
+    puts "\nGoodbye #{@name}.\n\n"
+    exit
+  end
+
+  def play
+    player = Core.new
+    puts player.guess(ask)
   end
 end
