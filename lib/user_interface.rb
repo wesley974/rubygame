@@ -8,21 +8,17 @@ class UserInterface
     @name = 'guest'
     header '|Game : The magicians|'
     instruction "Find the number between 1 and #{Core::RANGE}"
-    exit_message "You can abandon with the command 'quit'"
+    instruction "You can abandon with the command 'quit'"
     set_name
     play
   end
 
   def header(title)
-    puts "\n #{title.center(SPACES)}"
+    puts "\n\n #{title.center(SPACES)}\n"
   end
 
   def instruction(rules)
-    puts "\s#{rules}\s".center(SPACES, '*')
-  end
-
-  def exit_message(rules)
-    puts "\n#{rules}.\n\n"
+    puts "#{rules.center(SPACES)}"
   end
 
   def set_name
