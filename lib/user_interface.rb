@@ -5,9 +5,11 @@ require 'scoreboard'
 class UserInterface
   SPACES = 50
   def initialize
+    @name = 'guest'
     title
     teaser
     set_name
+    play
   end
 
   def title
@@ -22,13 +24,11 @@ class UserInterface
   end
 
   def set_name
-    @name = 'guest'
     print "\nEnter your name :\s"
     try_a_name = gets.chomp.capitalize
     @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
     bybye if try_a_name == 'Quit'
     puts "Let's play!\n\n"
-    play
   end
 
   def ask
