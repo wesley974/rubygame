@@ -1,4 +1,4 @@
-# The game engine
+# The game core engine
 class Core
   MAXNUM = 1_00 # 100
   def initialize
@@ -28,7 +28,8 @@ class Core
   end
 end
 
-# irb
+# TEST With irb
+# --------------------------------------
 # require_relative 'core'
 # player = Core.new => start the engine
 # player.guess(50) => guess
