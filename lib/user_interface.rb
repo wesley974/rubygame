@@ -22,28 +22,24 @@ class UserInterface
   end
 
   def set_name
-    print "\nEnter your name :\s"
-    try_a_name = gets.chomp.capitalize
+    try_a_name = ask("\nEnter your name : ").capitalize
     @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
-    bybye if try_a_name == 'Quit'
     puts "Let's play!\n\n"
   end
 
-  def ask
-    is_number = nil
-    until is_number
-      print "Try?\s"
-      number = gets.chomp
-      is_number = check_number(number)
-    end
-    number
+  def ask(whatitis = 'Try? ')
+    print whatitis
+    gets.chomp.tap { |input| bybye if input == 'quit' }
   end
 
-  def check_number(number)
-    bybye if number == 'quit'
-    is_number = number.to_s == number.to_i.to_s
-    puts 'Please, a number.' unless is_number
-    is_number
+  def a_number?(input)
+    input.to_s == input.to_i.to_s
+  end
+
+  def ask_for_number
+    num = ask
+    num = ask("Please, a number.\nTry? ") until a_number?(num)
+    num
   end
 
   def winner
@@ -63,7 +59,7 @@ class UserInterface
     @player = Core.new
     result = nil
     while result != 'a winner'
-      result = @player.guess(ask)
+      result = @player.guess(ask_for_number)
       puts result
     end
     check_winner
