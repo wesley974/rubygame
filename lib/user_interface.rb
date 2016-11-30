@@ -35,10 +35,15 @@ class UserInterface
       print "Try?\s"
       number = gets.chomp
       bybye if number == 'quit'
-      is_number = number.to_s == number.to_i.to_s
-      puts 'Please, a number.' unless is_number
+      is_number = check_number(number)
     end
     number
+  end
+
+  def check_number(number)
+    is_number = number.to_s == number.to_i.to_s
+    puts 'Please, a number.' unless is_number
+    is_number
   end
 
   def winner
