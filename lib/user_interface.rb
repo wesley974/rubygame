@@ -30,7 +30,7 @@ class UserInterface
   end
 
   def ask
-    is_number = false
+    is_number = nil
     until is_number
       print "Try?\s"
       number = gets.chomp
