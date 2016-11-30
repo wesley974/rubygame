@@ -24,7 +24,7 @@ class UserInterface
   def set_name
     print "\nEnter your name :\s"
     try_a_name = gets.chomp.capitalize
-    @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
+    @name = try_a_name unless try_a_name == 'Quit'
     bybye if try_a_name == 'Quit'
     puts "Let's play!\n\n"
   end
@@ -63,17 +63,17 @@ class UserInterface
   end
 
   def play
-    player = Core.new
+    @player = Core.new
     result = nil
     while result != 'a winner'
-      result = player.guess(init_ask)
+      result = @player.guess(init_ask)
       puts result
     end
-    check_winner(player.tries, player.time)
+    check_winner
   end
 
-  def check_winner(tries, time)
-    tries == 1 ? big_winner : winner
-    puts "\s In #{tries} attempts and in #{time} seconds!\n\n"
+  def check_winner
+    @player.tries == 1 ? big_winner : winner
+    puts "\s In #{@player.tries} attempts and in #{@player.time} seconds!\n\n"
   end
 end
