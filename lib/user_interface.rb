@@ -29,24 +29,16 @@ class UserInterface
     puts "Let's play!\n\n"
   end
 
-  def init_ask
-    answer = nil
-    while a_number?(answer) != true
-      answer = ask
-      puts 'Please, a number.' unless a_number?(answer)
-    end
-    answer
-  end
-
   def ask
-    print "Try?\s"
-    number = gets.chomp
-    bybye if number == 'quit'
+    is_number = false
+    until is_number
+      print "Try?\s"
+      number = gets.chomp
+      bybye if number == 'quit'
+      is_number = number.to_s == number.to_i.to_s
+      puts 'Please, a number.' unless is_number
+    end
     number
-  end
-
-  def a_number?(number)
-    number.to_s == number.to_i.to_s
   end
 
   def winner
@@ -66,7 +58,7 @@ class UserInterface
     @player = Core.new
     result = nil
     while result != 'a winner'
-      result = @player.guess(init_ask)
+      result = @player.guess(ask)
       puts result
     end
     check_winner
