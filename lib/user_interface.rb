@@ -24,7 +24,7 @@ class UserInterface
   def set_name
     print "\nEnter your name :\s"
     try_a_name = gets.chomp.capitalize
-    @name = try_a_name unless try_a_name == 'Quit'
+    @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
     bybye if try_a_name == 'Quit'
     puts "Let's play!\n\n"
   end
@@ -33,7 +33,6 @@ class UserInterface
     answer = nil
     while a_number?(answer) != true
       answer = ask
-      bybye if answer == 'quit'
       puts 'Please, a number.' unless a_number?(answer)
     end
     answer
@@ -42,6 +41,7 @@ class UserInterface
   def ask
     print "Try?\s"
     number = gets.chomp
+    bybye if number == 'quit'
     number
   end
 
