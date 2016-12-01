@@ -1,8 +1,8 @@
-1 week mentoring
-Day 1 : sunday 27  (mentoring ok)
-Day 2 : Tuesday 29 (mentoring ok)
-Day 3 : Wednesday 30 (mentoring ok)
-Day 4 :
-Day 5 :
-Day 6 :
-Day 7 :
+1 week mentoring<br>
+Day 1 : sunday 27  (mentoring ok)<br>
+Day 2 : Tuesday 29 (mentoring ok)<br>
+Day 3 : Wednesday 30 (mentoring ok)<br>
+Day 4 :<br>
+Day 5 :<br>
+Day 6 :<br>
+Day 7 :<br>
