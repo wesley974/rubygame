@@ -3,7 +3,7 @@
 Find quickly a number between 1 and 100.
 
 <h3>How to install?</h3>
-<code>bundle install</h3>
+<code>bundle install</code>
 
 <h3>How to run the game?</h3>
 <code>./game.rb</code>
