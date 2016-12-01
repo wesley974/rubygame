@@ -28,9 +28,15 @@ class Scoreboard
     exit
   end
 
-  def add(name, tries, time); end
+  def add(name, tries, time)
+    if Scoreboard.count < 3
+      File.open(@filepath, 'w') {|n| n << "#{name}\t#{tries}\t#{time}" }
+    end
+  end
 
-  def count; end
+  def self.count
+    File.foreach(@filepath).count
+  end
 
   def remove; end
 
