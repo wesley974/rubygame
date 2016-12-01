@@ -28,7 +28,7 @@ class Scoreboard
     exit
   end
 
-  def add; end
+  def add(name, tries, time); end
 
   def count; end
 
