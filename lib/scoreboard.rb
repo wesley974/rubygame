@@ -2,19 +2,36 @@ require 'fileutils'
 
 # Manage score file
 class Scoreboard
-  def initialize; end
-
-  def check_file; end
-
-  def self.view
+  def initialize
+    @filepath = File.join(File.dirname('../'), 'score.file')
   end
 
-  def self.add
+  def create_file
+    FileUtils.touch(@filepath) unless File.exist?(@filepath)
   end
 
-  def self.number
+  def check_file
+    return false unless File.exist?(@filepath)
+    return false unless File.readable?(@filepath)
+    return false unless File.writable?(@filepath)
+    true
   end
 
-  def self.replace
+  def view
+    File.readlines(@filepath).each do |line|
+      puts line
+    end
   end
+
+  def add; end
+
+  def number; end
+
+  def replace; end
 end
+
+# require_relative 'lib/scoreboard'
+# player = Scoreboard.new
+# player.create_file
+# player.check_file
+# player.view
