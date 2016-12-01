@@ -30,7 +30,9 @@ class Scoreboard
 
   def add(name, tries, time)
     if Scoreboard.count < 3
-      File.open(@filepath, 'w') {|n| n << "#{name}\t#{tries}\t#{time}" }
+      File.open(@@filepath, 'a') do |file|
+      file.puts "#{name}"
+      end
     end
   end
 
