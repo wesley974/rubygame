@@ -23,6 +23,11 @@ class Scoreboard
     end
   end
 
+  def self.error_io
+    puts 'Error I/O'
+    exit
+  end
+
   def add; end
 
   def number; end

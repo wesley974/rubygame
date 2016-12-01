@@ -10,7 +10,16 @@ class UserInterface
     instruction "Find the number between 1 and #{Core::RANGE.max}"
     instruction "You can abandon with the command 'quit'"
     set_name
+    view_score
     play
+  end
+
+  def view_score
+    player = Scoreboard.new
+    player.create_file
+    Scoreboard.error_io unless player.check_file
+    puts " - Best SCORE Time - \n"
+    player.view
   end
 
   def header(title)
