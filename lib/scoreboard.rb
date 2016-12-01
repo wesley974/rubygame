@@ -30,9 +30,11 @@ class Scoreboard
 
   def add; end
 
-  def number; end
+  def count; end
 
-  def replace; end
+  def remove; end
+
+  def add_empty_line; end
 end
 
 # require_relative 'lib/scoreboard'
