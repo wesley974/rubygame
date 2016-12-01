@@ -1,7 +1,7 @@
-rubocop # analyse all your project
-rubocop file.rb # analyse just file.rb
+rubocop # analyse all your project<br>
+rubocop file.rb # analyse just file.rb<br>
+<br>
+<h3>Options</h3>
 
-Options
-
--a | --auto-correct # apply correction, backup the files before !!
--E | --extra-details # give you more details
+-a | --auto-correct # apply correction, backup the files before !!<br>
+-E | --extra-details # give you more details<br>
