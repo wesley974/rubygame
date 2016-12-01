@@ -1,4 +1,5 @@
 <h3>Instruction for OpenBSD System</h3>
+<pre>  
   doas pkg_add vim
   
   cd
@@ -9,4 +10,4 @@
   
   doas install.sh
 
-  vim file.rb # you re done!
+  vim file.rb # you re done!</pre>
