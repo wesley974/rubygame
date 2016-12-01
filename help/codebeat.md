@@ -1,3 +1,3 @@
-UserInterface	47
-Scoreboard	11
+UserInterface	54
+Scoreboard	13
 Core		12
