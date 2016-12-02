@@ -18,7 +18,7 @@ class UserInterface
     score = Scoreboard.new
     score.create_file
     Scoreboard.error_io unless score.check_file
-    show(false, ' - Best SCORE Time - ')
+    show(false, '- The Best 3 SCORE -')
     score.view
   end
 
