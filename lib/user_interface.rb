@@ -15,16 +15,16 @@ class UserInterface
   end
 
   def view_score
-    player = Scoreboard.new
-    player.create_file
-    Scoreboard.error_io unless player.check_file
-    puts " - Best SCORE Time - \n"
-    player.view
+    score = Scoreboard.new
+    score.create_file
+    Scoreboard.error_io unless score.check_file
+    show(false, ' - Best SCORE Time - ')
+    score.view
   end
 
-  def show(title = false, rules = false)
-    puts "\n\n#{title.center(SPACES)}" unless rules
-    puts "#{rules.center(SPACES)}\n" unless title
+  def show(title = false, msg = false)
+    puts "\n\n#{title.center(SPACES)}" unless msg
+    puts "#{msg.center(SPACES)}\n" unless title
   end
 
   def set_name

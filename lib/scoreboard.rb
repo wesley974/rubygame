@@ -2,6 +2,7 @@ require 'fileutils'
 
 # Manage score file
 class Scoreboard
+  SPACE = 50
   def initialize
     @filepath = File.join(File.dirname('../'), 'score.file')
   end
@@ -19,7 +20,7 @@ class Scoreboard
 
   def view
     File.readlines(@filepath).each do |line|
-      puts line
+      puts line.center(SPACE)
     end
   end
 
