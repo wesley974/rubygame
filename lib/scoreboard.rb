@@ -30,8 +30,8 @@ class Scoreboard
   end
 
   def add(name, tries, time)
-    m = "#{name} #{tries} #{time}"
-    File.open(@filepath, 'a') { |f| f.puts m } if count < 3
+    m = "#{name} #{tries} attempts in #{time} seconds"
+    File.open(@filepath, 'a') { |f| f.puts m } 
   end
 
   def count
@@ -40,7 +40,7 @@ class Scoreboard
 
   def remove; end
 
-  def add_empty_line; end
+  def compare; end
 end
 
 # require_relative 'lib/scoreboard'
