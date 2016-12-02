@@ -6,9 +6,9 @@ class UserInterface
   SPACES = 50
   def initialize
     @name = 'guest'
-    header '|Game : The magicians|'
-    instruction "Find the number between 1 and #{Core::RANGE.max}"
-    instruction "You can abandon with the command 'quit'"
+    show('|Game : The magicians|', false)
+    show(false, "Find the number between 1 and #{Core::RANGE.max}")
+    show(false, "You can abandon with the command 'quit'")
     set_name
     view_score
     play
@@ -22,12 +22,9 @@ class UserInterface
     player.view
   end
 
-  def header(title)
-    puts "\n\n #{title.center(SPACES)}\n"
-  end
-
-  def instruction(rules)
-    puts "#{rules.center(SPACES)}\n"
+  def show(title = false, rules = false)
+    puts "\n\n#{title.center(SPACES)}" unless rules
+    puts "#{rules.center(SPACES)}\n" unless title
   end
 
   def set_name

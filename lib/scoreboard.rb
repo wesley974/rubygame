@@ -29,14 +29,11 @@ class Scoreboard
   end
 
   def add(name, tries, time)
-    if Scoreboard.count < 3
-      File.open(@@filepath, 'a') do |file|
-      file.puts "#{name}"
-      end
-    end
+    m = "#{name} #{tries} #{time}"
+    File.open(@filepath, 'a') { |f| f.puts m } if count < 3
   end
 
-  def self.count
+  def count
     File.foreach(@filepath).count
   end
 
@@ -46,7 +43,9 @@ class Scoreboard
 end
 
 # require_relative 'lib/scoreboard'
-# player = Scoreboard.new
-# player.create_file
-# player.check_file
-# player.view
+# file = Scoreboard.new
+# file.create_file
+# file.check_file
+# file.count
+# file.add('Wesley',2,65)
+# file.view
