@@ -31,7 +31,7 @@ class Scoreboard
 
   def add(name, tries, time)
     m = "#{name} #{tries} attempts in #{time} seconds"
-    File.open(@filepath, 'a') { |f| f.puts m } 
+    File.open(@filepath, 'a') { |f| f.puts m }
   end
 
   def count
