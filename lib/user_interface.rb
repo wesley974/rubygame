@@ -18,7 +18,7 @@ class UserInterface
     score = Scoreboard.new
     score.create_file
     Scoreboard.error_io unless score.check_file
-    show(false, '- The Best 3 SCORE -')
+    show(false, '- The Best 3 SCORE -') if score.count > 0
     score.view
   end
 
@@ -30,7 +30,7 @@ class UserInterface
   def set_name
     try_a_name = ask("\nEnter your name : ").capitalize
     @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
-    puts "Let's play!\n\n"
+    puts "Try to be the first !\n\n"
   end
 
   def ask(whatitis = 'Try? ')
