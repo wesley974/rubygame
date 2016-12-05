@@ -42,7 +42,7 @@ end
 
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
-# file.check_file
+# file.check_file?
 # file.count
 # file.add('Wesley',2,65)
 # file.view
