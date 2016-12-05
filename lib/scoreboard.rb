@@ -38,7 +38,7 @@ class Scoreboard
 
   def remove(line); end
 
-  def compare(time); end
+  def rotation(time); end
 end
 
 # require_relative 'lib/scoreboard'
