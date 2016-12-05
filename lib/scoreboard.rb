@@ -3,23 +3,20 @@ require 'fileutils'
 # Manage score file
 class Scoreboard
   SPACE = 50
+  FLPATH = File.join(File.dirname('../'), 'score.file') 
   def initialize
-    @filepath = File.join(File.dirname('../'), 'score.file')
+    FileUtils.touch(FLPATH) unless File.exist?(FLPATH)
   end
 
-  def create_file
-    FileUtils.touch(@filepath) unless File.exist?(@filepath)
-  end
-
-  def check_file
-    return false unless File.exist?(@filepath)
-    return false unless File.readable?(@filepath)
-    return false unless File.writable?(@filepath)
+  def check_file?
+    return false unless File.exist?(FLPATH)
+    return false unless File.readable?(FLPATH)
+    return false unless File.writable?(FLPATH)
     true
   end
 
   def view
-    File.readlines(@filepath).each do |line|
+    File.readlines(FLPATH).each do |line|
       puts line.center(SPACE)
     end
   end
@@ -31,11 +28,11 @@ class Scoreboard
 
   def add(name, tries, time)
     m = "#{name} #{tries} attempts in #{time} seconds"
-    File.open(@filepath, 'a') { |f| f.puts m }
+    File.open(FLPATH, 'a') { |f| f.puts m }
   end
 
   def count
-    File.foreach(@filepath).count
+    File.foreach(FLPATH).count
   end
 
   def remove(line); end
@@ -45,7 +42,6 @@ end
 
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
-# file.create_file
 # file.check_file
 # file.count
 # file.add('Wesley',2,65)

@@ -16,8 +16,7 @@ class UserInterface
 
   def view_score
     score = Scoreboard.new
-    score.create_file
-    Scoreboard.error_io unless score.check_file
+    Scoreboard.error_io unless score.check_file?
     show(msg: '- The Best 3 SCORE -') if score.count > 0
     score.view
   end
