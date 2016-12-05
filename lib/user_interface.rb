@@ -6,9 +6,9 @@ class UserInterface
   SPACES = 50
   def initialize
     @name = 'guest'
-    show('|Game : The magicians|', false)
-    show(false, "Find the number between 1 and #{Core::RANGE.max}")
-    show(false, "You can abandon with the command 'quit'")
+    show(title: '|Game : The magicians|')
+    show(msg: "Find the number between 1 and #{Core::RANGE.max}")
+    show(msg: "You can abandon with the command 'quit'")
     set_name
     view_score
     play
@@ -18,11 +18,11 @@ class UserInterface
     score = Scoreboard.new
     score.create_file
     Scoreboard.error_io unless score.check_file
-    show(false, '- The Best 3 SCORE -') if score.count > 0
+    show(msg: '- The Best 3 SCORE -') if score.count > 0
     score.view
   end
 
-  def show(title = false, msg = false)
+  def show(title: nil, msg: nil)
     puts "\n\n#{title.center(SPACES)}" unless msg
     puts "#{msg.center(SPACES)}\n" unless title
   end
