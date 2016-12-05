@@ -38,9 +38,9 @@ class Scoreboard
     File.foreach(@filepath).count
   end
 
-  def remove; end
+  def remove(line); end
 
-  def compare; end
+  def compare(time); end
 end
 
 # require_relative 'lib/scoreboard'
