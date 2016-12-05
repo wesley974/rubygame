@@ -4,7 +4,7 @@ require 'yaml'
 # Manage score file
 class Scoreboard
   SPACE = 50
-  FLPATH = File.join(File.dirname('../'), 'score.file') 
+  FLPATH = File.join(File.dirname('../'), 'score.file')
   def initialize
     FileUtils.touch(FLPATH) unless File.exist?(FLPATH)
   end
