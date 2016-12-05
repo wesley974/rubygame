@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'yaml'
 
 # Manage score file
 class Scoreboard
