@@ -23,8 +23,8 @@ class UserInterface
   end
 
   def show(title: nil, msg: nil)
-    puts "\n\n#{title.center(SPACES)}" unless msg
-    puts "#{msg.center(SPACES)}\n" unless title
+    puts "\n\n#{title.center(SPACES)}" if title
+    puts "#{msg.center(SPACES)}\n" if msg
   end
 
   def set_name
