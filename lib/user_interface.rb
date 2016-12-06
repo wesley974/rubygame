@@ -1,5 +1,6 @@
 require 'core'
 require 'scoreboard'
+require 'terminal-table'
 
 # The user interface
 class UserInterface
@@ -15,10 +16,9 @@ class UserInterface
   end
 
   def view_score
-    score = Scoreboard.new
-    Scoreboard.error_io unless score.check_file?
-    show(msg: '- The Best 3 SCORE -') if score.count > 0
-    score.view
+    @score = Scoreboard.new
+    show(msg: '- The Best 3 SCORE -')
+    puts @score.stats
   end
 
   def show(title: nil, msg: nil)
