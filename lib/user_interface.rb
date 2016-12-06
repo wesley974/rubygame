@@ -11,14 +11,21 @@ class UserInterface
     show(msg: "Find the number between 1 and #{Core::RANGE.max}")
     show(msg: "You can abandon with the command 'quit'")
     set_name
-    view_score
+    view_score if Scoreboard.count > 0
     play
   end
 
   def view_score
     @score = Scoreboard.new
     show(msg: '- The Best 3 SCORE -')
-    puts @score.stats
+    rows = []
+    rows << ['Name', 'Attempts', 'Time!']
+    rows << :separator
+    @score.stats.each { |s| rows << [s[:name], s[:tries], s[:time]] }
+    table = Terminal::Table.new rows: rows
+    table.align_column(1, :center)
+    table.align_column(2, :center)
+    puts "#{table}\n\n"
   end
 
   def show(title: nil, msg: nil)
