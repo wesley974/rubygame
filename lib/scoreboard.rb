@@ -27,8 +27,8 @@ class Scoreboard
   end
 
   def add(name, tries, time)
-    m = "#{name} #{tries} attempts in #{time} seconds"
-    File.open(FLPATH, 'a') { |f| f.puts m }
+    d = "#{name} #{tries} attempts in #{time} seconds"
+    File.open(FLPATH, 'a') { |f| f.puts d }
   end
 
   def count
