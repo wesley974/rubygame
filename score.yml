@@ -1,4 +1,10 @@
 ---
-:name_label: Wesley
-:tries_label: 2
-:time_label: 33
+- :name: Isa
+  :tries: 8
+  :time: 5
+- :name: Erika
+  :tries: 8
+  :time: 10
+- :name: Henri
+  :tries: 8
+  :time: 19
