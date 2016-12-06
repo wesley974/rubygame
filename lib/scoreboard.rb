@@ -9,7 +9,7 @@ class Scoreboard
   end
 
   def add(item1, item2, item3)
-    @score << {name: item1, tries: item2, time: item3}
+    @score << { name: item1, tries: item2, time: item3 }
     @score.sort_by! { |i| i[:time] }
     @score.delete_at(3)
     File.open(FLPATH, 'w') { |f| f.write(@score.to_yaml) }
