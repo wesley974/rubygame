@@ -5,6 +5,7 @@ class Scoreboard
   FLPATH = File.join(File.dirname('../'), 'score.yml')
   def initialize
     File.new(FLPATH, 'w+') unless File.exist?(FLPATH)
+    Scoreboard.error_io unless check_file?
     @score = YAML.load_file(FLPATH)
   end
 
@@ -15,34 +16,22 @@ class Scoreboard
     true
   end
 
-  def view
-    File.readlines(FLPATH).each do |line|
-      puts line
-    end
-  end
-
   def self.error_io
     puts 'Error I/O'
     exit
   end
 
-  def append(name, tries, time)
-    @score = [name, tries, time]
+  def add(name, tries, time)
+    @score = { name_label: name, tries_label: tries, time_label: time }
     File.open(FLPATH, 'a') { |f| f.write(@score.to_yaml) }
   end
 
-  def count
-    File.foreach(FLPATH).count
+  def stats
+    @score
   end
-
-  def remove(line); end
-
-  def rotation(time); end
 end
 
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
-# file.check_file?
-# file.count
-# file.append('Wesley',2,65)
-# file.view
+# file.add('Wesley',2,65)
+# file.stats
