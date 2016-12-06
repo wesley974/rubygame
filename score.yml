@@ -1,10 +1,10 @@
 ---
-- :name: Isa
+- :name: Wes
+  :tries: 1
+  :time: 1
+- :name: Billy
+  :tries: 1
+  :time: 1
+- :name: Paul
   :tries: 8
-  :time: 5
-- :name: Erika
-  :tries: 8
-  :time: 10
-- :name: Henri
-  :tries: 8
-  :time: 19
+  :time: 15
