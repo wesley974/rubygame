@@ -1,11 +1,11 @@
-require 'fileutils'
 require 'yaml'
 
 # Manage score file
 class Scoreboard
   FLPATH = File.join(File.dirname('../'), 'score.yml')
   def initialize
-    FileUtils.touch(FLPATH) unless File.exist?(FLPATH)
+    File.new(FLPATH, 'w+') unless File.exist?(FLPATH)
+    @score = YAML.load_file(FLPATH)
   end
 
   def check_file?
@@ -26,9 +26,9 @@ class Scoreboard
     exit
   end
 
-  def add(name, tries, time)
-    d = "#{name} #{tries} attempts in #{time} seconds"
-    File.open(FLPATH, 'a') { |f| f.puts d }
+  def append(name, tries, time)
+    @score = [name, tries, time]
+    File.open(FLPATH, 'a') { |f| f.write(@score.to_yaml) }
   end
 
   def count
@@ -44,5 +44,5 @@ end
 # file = Scoreboard.new
 # file.check_file?
 # file.count
-# file.add('Wesley',2,65)
+# file.append('Wesley',2,65)
 # file.view
