@@ -3,7 +3,6 @@ require 'yaml'
 
 # Manage score file
 class Scoreboard
-  SPACE = 50
   FLPATH = File.join(File.dirname('../'), 'score.yml')
   def initialize
     FileUtils.touch(FLPATH) unless File.exist?(FLPATH)
@@ -18,7 +17,7 @@ class Scoreboard
 
   def view
     File.readlines(FLPATH).each do |line|
-      puts line.center(SPACE)
+      puts line
     end
   end
 
