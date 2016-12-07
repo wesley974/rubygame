@@ -18,14 +18,9 @@ class Scoreboard
   def stats
     @score
   end
-
-  def self.count
-    File.foreach(FLPATH).count
-  end
 end
 
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
 # file.add('Wesley',2,65)
 # file.stats
-# Scoreboard.count
