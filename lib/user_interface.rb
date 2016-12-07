@@ -11,17 +11,17 @@ class UserInterface
     show(msg: "Find the number between 1 and #{Core::RANGE.max}")
     show(msg: "You can abandon with the command 'quit'")
     set_name
-    view_score if Scoreboard.count > 0
+    view_score
     play
   end
 
   def view_score
-    @score = Scoreboard.new
+    @board = Scoreboard.new
     show(msg: '- The Best 3 SCORE -')
     rows = []
     rows << ['Name', 'Attempts', 'Time!']
     rows << :separator
-    @score.stats.each { |s| rows << [s[:name], s[:tries], s[:time]] }
+    @board.stats.each { |s| rows << [s[:name], s[:tries], s[:time]] } unless @board.stats.nil?
     table = Terminal::Table.new rows: rows
     table.align_column(1, :center)
     table.align_column(2, :center)
@@ -80,5 +80,6 @@ class UserInterface
   def check_winner
     @player.tries == 1 ? big_winner : winner
     puts "\s In #{@player.tries} attempts and in #{@player.time} seconds!\n\n"
+    @board.add(@name, @player.tries, @player.time)
   end
 end

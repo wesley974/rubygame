@@ -4,8 +4,8 @@ require 'yaml'
 class Scoreboard
   FLPATH = File.join(File.dirname('../'), 'score.yml')
   def initialize
-    @score = []
     @score = YAML.load_file(FLPATH) if File.exist?(FLPATH)
+    @score = [] unless @score
   end
 
   def add(item1, item2, item3)
@@ -23,4 +23,4 @@ end
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
 # file.add('Wesley',2,65)
-# file.stats
+# Scoreboard.stats
