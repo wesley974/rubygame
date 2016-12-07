@@ -2,9 +2,9 @@
 - :name: Jean
   :tries: 5
   :time: 10
+- :name: guest
+  :tries: 7
+  :time: 11
 - :name: Josh
   :tries: 7
   :time: 13
-- :name: Wesley
-  :tries: 8
-  :time: 14
