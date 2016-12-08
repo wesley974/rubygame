@@ -19,8 +19,7 @@ class UserInterface
   def view_score
     @board = Scoreboard.new
     show(msg: '- The Best 3 SCORE -')
-    rows = []
-    @board.stats.each { |s| rows << [s[:name], s[:tries], s[:time]] } unless @board.stats.nil?
+    rows = @board.layout
     table = Terminal::Table.new headings: HEADER, rows: rows
     table.align_column(1, :center)
     table.align_column(2, :center)

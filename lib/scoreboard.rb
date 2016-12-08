@@ -20,7 +20,7 @@ class Scoreboard
   end
 
   def layout
-    
+    @score.map { |a| [a[:name], a[:tries], a[:time]] }
   end
 end
 
@@ -28,3 +28,4 @@ end
 # file = Scoreboard.new
 # file.add('Wesley',2,65)
 # Scoreboard.stats
+# file.layout
