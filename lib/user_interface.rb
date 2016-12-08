@@ -1,7 +1,7 @@
 require 'core'
 require 'scoreboard'
-require 'colored'
 require 'terminal-table'
+require 'colored'
 
 # The user interface
 class UserInterface
