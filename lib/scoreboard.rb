@@ -18,6 +18,10 @@ class Scoreboard
   def stats
     @score
   end
+
+  def layout
+    
+  end
 end
 
 # require_relative 'lib/scoreboard'

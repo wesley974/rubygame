@@ -4,5 +4,5 @@ Day 2 : Tuesday 29 november (mentoring ok)<br>
 Day 3 : Wednesday 30 november (mentoring ok)<br>
 Day 4 : Thurday 05 december (mentoring ok)<br>
 Day 5 : Tuesday 06 december (mentoring ok)<br>
-Day 6 :<br>
+Day 6 : Thursday 08 december (mentoring ok)<br>
 Day 7 :<br>

@@ -5,6 +5,7 @@ require 'terminal-table'
 # The user interface
 class UserInterface
   SPACES = 50
+  HEADER = ['Name', 'Attempts', 'Time!'].freeze
   def initialize
     @name = 'guest'
     show(title: '|Game : The magicians|')
@@ -19,13 +20,10 @@ class UserInterface
     @board = Scoreboard.new
     show(msg: '- The Best 3 SCORE -')
     rows = []
-    rows << ['Name', 'Attempts', 'Time!']
-    rows << :separator
     @board.stats.each { |s| rows << [s[:name], s[:tries], s[:time]] } unless @board.stats.nil?
-    table = Terminal::Table.new rows: rows
+    table = Terminal::Table.new headings: HEADER, rows: rows
     table.align_column(1, :center)
     table.align_column(2, :center)
-    #puts "#{table}\n\n"
     puts table.render.split("\n").map { |ln| ln.center(50) }.join("\n")
   end
 
