@@ -1,5 +1,6 @@
 require 'core'
 require 'scoreboard'
+require 'colored'
 require 'terminal-table'
 
 # The user interface
@@ -27,7 +28,7 @@ class UserInterface
   end
 
   def show(title: nil, msg: nil)
-    puts "\n\n#{title.center(SPACES)}" if title
+    puts "\n\n#{title.center(SPACES).green.bold}" if title
     puts "#{msg.center(SPACES)}\n" if msg
   end
 
