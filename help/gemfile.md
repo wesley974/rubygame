@@ -1,11 +1,11 @@
-To generate Gemfile :
+To generate the Gemfile :
 bundle init
 
-To install gems :
+To install the gems :
 doas bundle install
 
-To update gems :
+To update the gems :
 doas bundle update
 
-To list installed gems :
+To list the installed gems :
 gem list

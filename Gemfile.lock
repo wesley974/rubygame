@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.3.0)
+    colored (1.2)
     diff-lcs (1.2.5)
     parser (2.3.3.1)
       ast (~> 2.2)
@@ -35,6 +36,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  colored
   rspec
   rubocop
   terminal-table
