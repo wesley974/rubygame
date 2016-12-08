@@ -25,7 +25,8 @@ class UserInterface
     table = Terminal::Table.new rows: rows
     table.align_column(1, :center)
     table.align_column(2, :center)
-    puts "#{table}\n\n"
+    #puts "#{table}\n\n"
+    puts table.render.split("\n").map { |ln| ln.center(50) }.join("\n")
   end
 
   def show(title: nil, msg: nil)
