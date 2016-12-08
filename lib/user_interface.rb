@@ -79,7 +79,7 @@ class UserInterface
 
   def check_winner
     @player.tries == 1 ? big_winner : winner
-    #puts " In #{@player.tries} attempts and in #{@player.time} seconds!\n"
     @board.add(@name, @player.tries, @player.time)
+    puts "In #{@player.tries} attempts and in #{@player.time} seconds!"
   end
 end
