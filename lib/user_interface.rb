@@ -76,9 +76,24 @@ class UserInterface
     check_winner
   end
 
+  def new_score
+    rt = [@name, @player.tries, @player.time]
+    if @board.layout.count < 3
+      puts 'New score !'.bold.red
+    elsif
+      for s in 0..2
+        if rt[2] < @board.layout[s][2]
+          puts 'New score !'.bold.red
+          break
+        end
+      end
+    end
+  end
+
   def check_winner
-    @player.tries == 1 ? big_winner : winner
-    @board.add(@name, @player.tries, @player.time)
     puts " In #{@player.tries} attempts and in #{@player.time} seconds!\n"
+    @player.tries == 1 ? big_winner : winner
+    new_score
+    @board.add(@name, @player.tries, @player.time)
   end
 end

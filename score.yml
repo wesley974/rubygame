@@ -1,10 +1,10 @@
 ---
+- :name: Josh
+  :tries: 4
+  :time: 6
 - :name: Wesley
-  :tries: 9
-  :time: 14
+  :tries: 5
+  :time: 7
 - :name: Wesley
-  :tries: 10
-  :time: 14
-- :name: Erika
-  :tries: 8
-  :time: 15
+  :tries: 4
+  :time: 8
