@@ -81,12 +81,12 @@ class UserInterface
     if @board.layout.count < 3
       puts 'New score !'.bold.red
     elsif
-      for s in 0..2
-        if rt[2] < @board.layout[s][2]
-          puts 'New score !'.bold.red
-          break
-        end
+    for s in 0..2 do
+      if rt[2] < @board.layout[s][2]
+        puts 'New score !'.bold.red
+        break
       end
+    end
     end
   end
 
