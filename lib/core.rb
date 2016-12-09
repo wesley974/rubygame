@@ -17,7 +17,6 @@ class Core
     result = 'too big' if number.to_i > @secret
     result = 'too small' if number.to_i < @secret
     result = 'a winner' if number.to_i == @secret
-    # a_number?(number) ? @attempts += 1 : result = 'not a number'
     result
   end
 

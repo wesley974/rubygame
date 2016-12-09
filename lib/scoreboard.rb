@@ -26,6 +26,6 @@ end
 
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
-# file.add('Wesley',2,65)
-# Scoreboard.stats
-# file.layout
+# file.add('Wesley',2,65) => number
+# file.stats => [{}, {}, {}]
+# file.layout => [[], [], []]
