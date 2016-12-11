@@ -3,16 +3,19 @@ require 'yaml'
 # Manage score file
 class Scoreboard
   FLPATH = File.join(File.dirname('../'), 'score.yml')
+  Row = Struct.new(:name, :tries, :time, :timestamp)
   def initialize
     @score = YAML.load_file(FLPATH) if File.exist?(FLPATH)
     @score = [] unless @score
   end
 
-  def add(item1, item2, item3)
-    @score << { name: item1, tries: item2, time: item3 }
+  def add?(item1, item2, item3)
+    item4 = Time.new    
+    @score << Row.new(item1, item2, item3, item4)
     @score.sort_by! { |i| i[:time] }
     @score.delete_at(3)
     File.open(FLPATH, 'w') { |f| f.write(@score.to_yaml) }
+    @score.include?("timestamp=#{item4}")
   end
 
   def stats

@@ -1,10 +1,16 @@
 ---
-- :name: Josh
-  :tries: 4
-  :time: 6
-- :name: Wesley
-  :tries: 5
-  :time: 7
-- :name: Alex
-  :tries: 10
-  :time: 11
+- !ruby/struct:Scoreboard::Row
+  name: Mickey
+  tries: 8
+  time: 1
+  timestamp: 2016-12-11 16:51:23.829826467 +04:00
+- !ruby/struct:Scoreboard::Row
+  name: Josh
+  tries: 8
+  time: 2
+  timestamp: 2016-12-11 16:49:48.744530109 +04:00
+- !ruby/struct:Scoreboard::Row
+  name: Josh
+  tries: 8
+  time: 3
+  timestamp: 2016-12-11 16:48:11.067199697 +04:00
