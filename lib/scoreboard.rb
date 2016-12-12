@@ -29,3 +29,4 @@ end
 # file = Scoreboard.new
 # file.add('Wesley',2,65) => number
 # file.info => [[], [], []]
+# file.write
