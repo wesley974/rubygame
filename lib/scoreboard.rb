@@ -13,7 +13,7 @@ class Scoreboard
     @score = [*@score, Row.new(name, tries, time, timestamp)]
              .sort_by(&:time)
              .first(3)
-    @score.any? { |row| row.timestamp == timestamp }
+    write if @score.any? { |row| row.timestamp == timestamp }
   end
 
   def write
