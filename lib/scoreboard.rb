@@ -10,17 +10,8 @@ class Scoreboard
   end
 
   def add(name, tries, time, timestamp = Time.new)
-    @score << Row.new(name, tries, time, timestamp)
-    @score.sort_by! { |i| i[:time] }
-    @score.delete_at(3)
-    @score.any? { |row| row.timestamp == timestamp }
-  end
-
-  def write
+    @score = [*@score, Row.new(name, tries, time, timestamp)].sort_by(&:time).first(3)
     File.open(FLPATH, 'w') { |f| f.write(@score.to_yaml) }
-  end 
-
-  def add?
     @score.any? { |row| row.timestamp == timestamp }
   end
 
