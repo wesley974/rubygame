@@ -11,6 +11,6 @@
   timestamp: 2016-12-12 09:45:19.240475816 +04:00
 - !ruby/struct:Scoreboard::Row
   name: Wesley
-  tries: 7
-  time: 11
-  timestamp: 2016-12-11 22:51:34.057136828 +04:00
+  tries: 6
+  time: 8
+  timestamp: 2016-12-12 10:40:45.817543381 +04:00
