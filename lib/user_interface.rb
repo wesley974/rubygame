@@ -8,7 +8,7 @@ class UserInterface
   SPACES = 50
   HEADER = ['Name', 'Attempts', 'Time!'].freeze
   def initialize
-    @name = 'guest'
+    @name = 'Guest'
     show(title: '|Game : The magicians|')
     show(msg: "Find the number between 1 and #{Core::RANGE.max}")
     show(msg: "You can abandon with the command 'quit'")
