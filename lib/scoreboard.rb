@@ -9,8 +9,7 @@ class Scoreboard
     @score = [] unless @score
   end
 
-  def add?(item1, item2, item3)
-    item4 = Time.new
+  def add(item1, item2, item3, item4 = Time.new)
     @score << Row.new(item1, item2, item3, item4)
     @score.sort_by! { |i| i[:time] }
     @score.delete_at(3)
@@ -35,3 +34,4 @@ end
 # file.add('Wesley',2,65) => number
 # file.stats => [{}, {}, {}]
 # file.layout => [[], [], []]
+# file.add? => true or false
