@@ -9,15 +9,12 @@ class Scoreboard
     @score = [] unless @score
   end
 
-  def add(item1, item2, item3, item4 = Time.new)
-    @score << Row.new(item1, item2, item3, item4)
+  def add(name, tries, time, timestamp = Time.new)
+    @score << Row.new(name, tries, time, timestamp)
     @score.sort_by! { |i| i[:time] }
     @score.delete_at(3)
     File.open(FLPATH, 'w') { |f| f.write(@score.to_yaml) }
-    @score.each do |d|
-      return true if d.include?(item4)
-    end
-    false
+    @score.any? { |d| d[3] == timestamp }
   end
 
   def stats
