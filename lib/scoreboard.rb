@@ -14,7 +14,7 @@ class Scoreboard
     @score.sort_by! { |i| i[:time] }
     @score.delete_at(3)
     File.open(FLPATH, 'w') { |f| f.write(@score.to_yaml) }
-    @score.any? { |d| d[3] == timestamp }
+    @score.any? { |row| row.timestamp == timestamp }
   end
 
   def stats
