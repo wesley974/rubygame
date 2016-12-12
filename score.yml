@@ -4,3 +4,13 @@
   tries: 7
   time: 7
   timestamp: 2016-12-12 16:34:41.447487689 +04:00
+- !ruby/struct:Scoreboard::Row
+  name: Wesley
+  tries: 6
+  time: 8
+  timestamp: 2016-12-12 17:08:53.081753672 +04:00
+- !ruby/struct:Scoreboard::Row
+  name: Wesley
+  tries: 7
+  time: 10
+  timestamp: 2016-12-12 17:08:40.763044725 +04:00

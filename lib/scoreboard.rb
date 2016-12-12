@@ -17,11 +17,7 @@ class Scoreboard
     @score.any? { |row| row.timestamp == timestamp }
   end
 
-  def stats
-    @score
-  end
-
-  def layout
+  def info
     @score.map { |a| [a[:name], a[:tries], a[:time]] }
   end
 end
@@ -29,6 +25,4 @@ end
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
 # file.add('Wesley',2,65) => number
-# file.stats => [{}, {}, {}]
-# file.layout => [[], [], []]
-# file.add? => true or false
+# file.info => [[], [], []]

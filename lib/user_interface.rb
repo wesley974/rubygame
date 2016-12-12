@@ -20,7 +20,7 @@ class UserInterface
   def view_score
     @board = Scoreboard.new
     show(msg: '- The Best 3 SCORE -')
-    rows = @board.layout
+    rows = @board.info
     table = Terminal::Table.new headings: HEADER, rows: rows
     table.align_column(1, :center)
     table.align_column(2, :center)
