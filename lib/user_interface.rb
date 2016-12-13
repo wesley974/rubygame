@@ -88,5 +88,4 @@ class UserInterface
     end
     new_score
   end
-
 end
