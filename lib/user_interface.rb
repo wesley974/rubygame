@@ -82,14 +82,10 @@ class UserInterface
     check_winner
   end
 
-  def new_score
-    puts 'New Score !!'.red.bold \
-      if @board.add(@name, @player.tries, @player.time)
-  end
-
   def check_winner
     puts " In #{@player.tries} attempts and in #{@player.time} seconds!\n"
     @player.tries == 1 ? big_winner : winner
-    new_score
+    puts 'New Score !!'.red.bold \
+      if @board.add(@name, @player.tries, @player.time)
   end
 end
