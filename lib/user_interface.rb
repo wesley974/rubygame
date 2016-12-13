@@ -9,16 +9,25 @@ class UserInterface
   HEADER = ['Name', 'Attempts', 'Time!'].freeze
   def initialize
     @name = 'Guest'
-    show(title: '|Game : The magicians|')
-    show(msg: "Find the number between 1 and #{Core::RANGE.max}")
-    show(msg: "You can abandon with the command 'quit'")
+    @board = Scoreboard.new
+    welcome
     set_name
     view_score
     play
   end
 
+  def show(title: nil, msg: nil)
+    puts "\n\n#{title.center(SPACES).green.bold}" if title
+    puts "#{msg.center(SPACES)}\n" if msg
+  end
+
+  def welcome
+    show(title: '|Game : The magicians|')
+    show(msg: "Find the number between 1 and #{Core::RANGE.max}")
+    show(msg: "You can abandon with the command 'quit'")
+  end
+
   def view_score
-    @board = Scoreboard.new
     show(msg: '- The Best 3 SCORE -')
     format_table(@board.info)
   end
@@ -30,15 +39,9 @@ class UserInterface
     puts table.render.split("\n").map { |ln| ln.center(50) }.join("\n")
   end
 
-  def show(title: nil, msg: nil)
-    puts "\n\n#{title.center(SPACES).green.bold}" if title
-    puts "#{msg.center(SPACES)}\n" if msg
-  end
-
   def set_name
     try_a_name = ask("\nEnter your name : ").capitalize
     @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
-    puts "Try to be the first !\n\n"
   end
 
   def ask(whatitis = 'Try? ')
