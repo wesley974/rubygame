@@ -59,14 +59,6 @@ class UserInterface
     num
   end
 
-  def winner
-    puts "\n We have a winner, #{@name}!"
-  end
-
-  def big_winner
-    puts "\n\nWow, amazing !!!\nWe have found our magician ?!\n\n"
-  end
-
   def bybye
     puts "\nGoodbye #{@name}.\n\n"
     exit
@@ -82,10 +74,19 @@ class UserInterface
     check_winner
   end
 
-  def check_winner
-    puts "In #{@player.tries} attempts and in #{@player.time} seconds!\n"
-    @player.tries == 1 ? big_winner : winner
+  def new_score
     puts 'New Score !!'.red.bold \
       if @board.add(@name, @player.tries, @player.time)
   end
+
+  def check_winner
+    puts "In #{@player.tries} attempts and in #{@player.time} seconds!\n"
+    if @player.tries == 1
+      puts "\n\nWow, amazing !!!\nWe have found our magician ?!\n\n"
+    else
+      puts "\n We have a winner, #{@name}!"
+    end
+    new_score
+  end
+
 end
