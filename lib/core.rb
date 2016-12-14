@@ -15,10 +15,11 @@ class Core
 
   def guess(number)
     @tries += 1
-    result = 'too big' if number.to_i > @secret
-    result = 'too small' if number.to_i < @secret
-    result = 'a winner' if number.to_i == @secret
-    result
+    case number.to_i <=> @secret
+    when -1 then :less
+    when 0 then :win
+    when 1 then :big
+    end
   end
 
   attr_reader :tries
@@ -27,8 +28,6 @@ class Core
     (Time.now - @start_time).round
   end
 end
-
-# Debug with : rubocop lib/core.rb
 
 # TEST With irb
 # --------------------------------------

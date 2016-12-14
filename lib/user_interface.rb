@@ -67,7 +67,7 @@ class UserInterface
   def play
     @player = Core.new
     result = nil
-    while result != 'a winner'
+    while result != :win
       result = @player.guess(ask_for_number)
       puts result
     end
