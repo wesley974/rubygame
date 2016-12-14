@@ -1,16 +1,17 @@
 # The game core engine
 class Core
   RANGE = 1..1_00 # 1 to 100
-  def initialize
-    @secret = rand(RANGE)
-    @tries = 0
-    @start_time = Time.new
-  end
 
   # def secret
   #  @secret
   # end
   attr_reader :secret
+
+  def initialize
+    @secret = rand(RANGE)
+    @tries = 0
+    @start_time = Time.new
+  end
 
   def guess(number)
     @tries += 1
