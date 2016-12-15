@@ -1,31 +1,29 @@
 # The game core engine
 class Core
-  RANGE = 1..1_00 # 1 to 100
+  RANGE = 1..100 # 1 to 100
 
-  # def secret
-  #  @secret
-  # end
   attr_reader :secret
 
   def initialize
     @secret = rand(RANGE)
-    @tries = 0
-    @start_time = Time.new
+    @statistics = {tries: 0, start_time: Time.now }
   end
 
   def guess(number)
-    @tries += 1
+    @statistics[:tries] += 1
     case number.to_i <=> @secret
-    when -1 then :less
-    when 0 then :win
-    when 1 then :big
+    when -1 then :higher
+    when 0 then :win # end of game flag
+    when 1 then :lower
     end
   end
 
-  attr_reader :tries
+  def tries
+    @statistics[:tries]
+  end
 
   def time
-    (Time.now - @start_time).round
+    Time.now - @statistics[:start_time]
   end
 end
 
