@@ -54,9 +54,9 @@ class UserInterface
   end
 
   def ask_for_number
-    num = ask
-    num = ask("Please, a number.\nTry? ") until a_number?(num)
-    num
+    number = ask
+    number = ask("Please, a number.\nTry? ") until a_number?(number)
+    number
   end
 
   def bybye
