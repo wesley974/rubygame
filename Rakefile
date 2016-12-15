@@ -11,6 +11,6 @@ task :test do
 end
 
 task :style do
-  puts 'Debugging with Rubocop'
+  puts 'Rubocop advices'
   exec 'rubocop'
 end
