@@ -6,7 +6,7 @@ class Core
 
   def initialize
     @secret = rand(RANGE)
-    @statistics = {tries: 0, start_time: Time.now }
+    @statistics = { tries: 0, start_time: Time.now }
   end
 
   def guess(number)
