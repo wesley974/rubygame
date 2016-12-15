@@ -46,7 +46,7 @@ class UserInterface
 
   def ask(whatitis = 'Try? ')
     print whatitis
-    gets.chomp.tap { |input| bybye if input == 'quit' }
+    gets.chomp.tap { |input| bybye if input == 'quit' } # clever use of tap
   end
 
   def a_number?(input)
@@ -61,13 +61,13 @@ class UserInterface
 
   def bybye
     puts "\nGoodbye #{@name}.\n\n"
-    exit
+    exit # sad that the program ends, rather than just the game itself.
   end
 
   def play
     @player = Core.new
     result = nil
-    while result != :win
+    until result == :win
       result = @player.guess(ask_for_number)
       puts result
     end
