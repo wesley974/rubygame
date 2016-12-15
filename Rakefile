@@ -8,3 +8,6 @@ task :test do
   command = "ruby #{ruby_args} -rminitest/autorun spec/core_spec.rb && rubocop"
   exec command
 end
+task :style do
+  exec 'rubocop'
+end
