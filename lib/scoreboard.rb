@@ -5,8 +5,7 @@ class Scoreboard
   FLPATH = File.join(File.dirname('../'), 'score.yml')
   Row = Struct.new(:name, :tries, :time, :timestamp)
   def initialize
-    @score = YAML.load_file(FLPATH) if File.exist?(FLPATH)
-    @score = [] unless @score
+    @score = File.exist?(FLPATH) ? YAML.load_file(FLPATH) : []
   end
 
   def add(name, tries, time, timestamp = Time.new)
