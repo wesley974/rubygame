@@ -11,11 +11,7 @@ class Core
 
   def guess(number)
     @statistics[:tries] += 1
-    case number.to_i <=> @secret
-    when -1 then :higher
-    when 0 then :win # end of game flag
-    when 1 then :lower
-    end
+    { -1 => :higher, 0 => :win, 1 => :lower }[number.to_i <=> @secret]
   end
 
   def tries
