@@ -11,7 +11,7 @@ class Core
 
   def guess(number)
     @statistics[:tries] += 1
-                { -1 => :higher, 0 => :win, 1 => :lower}[number.to_i <=> @secret]
+    { -1 => :higher, 0 => :win, 1 => :lower }[number.to_i <=> @secret]
   end
 
   def tries
