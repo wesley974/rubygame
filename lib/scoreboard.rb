@@ -21,11 +21,11 @@ class Scoreboard
 
   private
     def write
-      File.open(FLPATH, 'w') { |f| f.write(@score.to_yaml) }
+      File.write(FLPATH, @score.to_yaml)
     end
 end
 
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
-# file.add('Wesley',2,65) => number
+# file.add('Wesley',2,65) => Integer
 # file.info => [[], [], []]
