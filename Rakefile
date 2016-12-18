@@ -13,3 +13,7 @@ end
 task :style do
   sh 'rubocop'
 end
+
+task :guard do
+  sh 'guard start'
+end
