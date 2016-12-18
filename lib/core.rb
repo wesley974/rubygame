@@ -2,7 +2,11 @@
 class Core
   RANGE = 1..100 # 1 to 100
 
+  private
+
   attr_reader :secret
+
+  public
 
   def initialize
     @secret = rand(RANGE)
@@ -23,11 +27,27 @@ class Core
   end
 end
 
-# TEST With irb
+# TEST With irb (Really using rubydoctest gem)
 # --------------------------------------
-# require_relative 'lib/core'
-# player = Core.new => start the engine
-# player.guess(50) => result
-# player.secret => give the secret number!
-# player.tries => get the tries number
-# player.time => get time left in seconds
+# doctest: Setup
+# >> require './lib/core'
+# >> Random.srand(1)
+# >> player = Core.new
+# doctest: secret returns the number
+# >> player.send(:secret)
+# => 38
+# doctest: guess a number that is too high
+# >> player.guess(50)
+# => :lower
+# doctest: guess a number that is too low
+# >> player.guess(25)
+# => :higher
+# doctest: Guess the winning number
+# >> player.guess(38)
+# => :win
+# doctest: Winning statistics
+# >> player.tries
+# => 3
+# doctest: winning time as float
+# >> player.time.class
+# => Float
