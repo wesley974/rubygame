@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 gem 'colored'
+gem 'press_any_key'
 gem 'terminal-table'
 
 group :test do

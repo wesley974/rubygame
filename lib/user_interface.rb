@@ -1,5 +1,6 @@
 require 'core'
 require 'scoreboard'
+require 'press_any_key'
 require 'terminal-table'
 require 'colored'
 
@@ -86,6 +87,8 @@ class UserInterface
   def new_score
     puts message(:new_score).red.bold \
       if @board.add(@name, @player.tries, @player.time)
+    PressAnyKey.new
+    UserInterface.new
   end
 
   def check_winner
