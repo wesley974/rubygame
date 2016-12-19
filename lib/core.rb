@@ -1,6 +1,6 @@
 # The game core engine
 class Core
-  RANGE = 1..100 # 1 to 100
+  RANGE = 1..100
 
   attr_reader :secret
 
@@ -23,7 +23,7 @@ class Core
   end
 end
 
-# TEST With irb
+# Testing with irb
 # --------------------------------------
 # require_relative 'lib/core'
 # player = Core.new => start the engine
