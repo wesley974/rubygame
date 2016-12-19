@@ -3,10 +3,13 @@ GEM
   specs:
     ast (2.3.0)
     colored (1.2)
+    io-console (0.4.5)
     minitest (5.9.1)
     parser (2.3.3.1)
       ast (~> 2.2)
     powerpack (0.1.1)
+    press_any_key (0.0.1)
+      io-console (~> 0.4.2)
     rainbow (2.1.0)
     rake (11.2.2)
     rubocop (0.46.0)
@@ -26,6 +29,7 @@ PLATFORMS
 DEPENDENCIES
   colored
   minitest
+  press_any_key
   rake
   rubocop
   terminal-table
