@@ -16,19 +16,28 @@ class UserInterface
     play
   end
 
-  def show(title: nil, msg: nil)
+  def message(category)
+    db = { new_score: ' New Score !!',
+           winner: " We have a winner, #{@name}!",
+           magician: ' We have found our magician ?!',
+           results: "#{@player.tries} attempts in #{@player.time} seconds!\n",
+           bybye: "\nGoodbye #{@name}.\n\n" }
+    db[category]
+  end
+
+  def format(title: nil, msg: nil)
     puts "\n\n#{title.center(SPACES).green.bold}" if title
     puts "#{msg.center(SPACES)}\n" if msg
   end
 
   def welcome
-    show(title: '|Game : The magicians|')
-    show(msg: "Find the number between 1 and #{Core::RANGE.max}")
-    show(msg: "You can abandon with the command 'quit'")
+    format(title: '|Game : The magicians|')
+    format(msg: "Find the number between 1 and #{Core::RANGE.max}")
+    format(msg: "You can abandon with the command 'quit'")
   end
 
   def view_score
-    show(msg: '- The Best 3 SCORE -')
+    format(msg: '- The Best 3 SCORE -')
     format_table(@board.info)
   end
 
@@ -46,7 +55,7 @@ class UserInterface
 
   def ask(whatitis = 'Try? ')
     print whatitis
-    gets.chomp.tap { |input| bybye if input == 'quit' } # clever use of tap
+    gets.chomp.tap { |input| bybye if input == 'quit' }
   end
 
   def a_number?(input)
@@ -60,8 +69,8 @@ class UserInterface
   end
 
   def bybye
-    puts "\nGoodbye #{@name}.\n\n"
-    exit # sad that the program ends, rather than just the game itself.
+    puts message(:bybye)
+    exit
   end
 
   def play
@@ -75,16 +84,16 @@ class UserInterface
   end
 
   def new_score
-    puts ' New Score !!'.red.bold \
+    puts message(:new_score).red.bold \
       if @board.add(@name, @player.tries, @player.time)
   end
 
   def check_winner
-    puts "In #{@player.tries} attempts and in #{@player.time} seconds!\n"
+    puts message(:results)
     if @player.tries == 1
-      puts "\n\n Wow, amazing !!!\nWe have found our magician ?!\n\n"
+      puts message(:magician)
     else
-      puts "\n We have a winner, #{@name}!"
+      puts message(:winner)
     end
     new_score
   end
