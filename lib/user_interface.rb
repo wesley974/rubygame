@@ -17,15 +17,6 @@ class UserInterface
     play
   end
 
-  def message(category)
-    db = { new_score: ' New Score !!',
-           winner: " We have a winner, #{@name}!",
-           magician: ' We have found our magician ?!',
-           results: "#{@player.tries} attempts in #{@player.time} seconds!\n",
-           bybye: "\nGoodbye #{@name}.\n\n" }
-    db[category]
-  end
-
   def format(title: nil, msg: nil)
     puts "\n\n#{title.center(SPACES).green.bold}" if title
     puts "#{msg.center(SPACES)}\n" if msg
@@ -51,11 +42,11 @@ class UserInterface
 
   def set_name
     try_a_name = ask("\nEnter your name : ").capitalize
-    @name = try_a_name unless try_a_name == 'Quit' || try_a_name.empty?
+    @name = try_a_name unless try_a_name.empty?
   end
 
-  def ask(whatitis = 'Try? ')
-    print whatitis
+  def ask(question = 'Try? ')
+    print question
     gets.chomp.tap { |input| bybye if input == 'quit' }
   end
 
@@ -70,7 +61,7 @@ class UserInterface
   end
 
   def bybye
-    puts message(:bybye)
+    puts "Goodbye #{@name}.\n\n"
     exit
   end
 
@@ -85,18 +76,18 @@ class UserInterface
   end
 
   def new_score
-    puts message(:new_score).red.bold \
+    puts ' New Score !!'.red.bold \
       if @board.add(@name, @player.tries, @player.time)
     PressAnyKey.new
     UserInterface.new
   end
 
   def check_winner
-    puts message(:results)
+    puts "#{@player.tries} attempts in #{@player.time} seconds!\n"
     if @player.tries == 1
-      puts message(:magician)
+      puts ' We have found our magician ?!'
     else
-      puts message(:winner)
+      puts " We have a winner, #{@name}!"
     end
     new_score
   end
