@@ -7,3 +7,14 @@ Find quickly a number between 1 and 100.
 
 <h3>How to run the game?</h3>
 <code>./bin/game</code>
+
+## Tests
+
+<h3>Execute minitest (spec/core.rb)</h3>
+<code>rake</code>
+
+<h3>Test your Ruby style programming with rubocop</h3>
+<code>rake style</code>
+
+<h3>Run minitest/rubocop</h3>
+<code>rake all</code>
