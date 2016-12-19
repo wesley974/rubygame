@@ -20,9 +20,10 @@ class Scoreboard
   end
 
   private
-    def write
-      File.write(FILE_PATH, @score.to_yaml)
-    end
+
+  def write
+    File.write(FILE_PATH, @score.to_yaml)
+  end
 end
 
 # Testing with irb
