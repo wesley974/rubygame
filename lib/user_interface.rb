@@ -7,7 +7,7 @@ require 'colored'
 # The user interface
 class UserInterface
   SPACES = 50
-  HEADER = ['Name', 'Attempts', 'Time!'].freeze
+  HEADER = %w(Name Attempts Time!).freeze
   def initialize
     @name = 'Guest'
     @board = Scoreboard.new
