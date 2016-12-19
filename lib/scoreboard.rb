@@ -2,10 +2,10 @@ require 'yaml'
 
 # Manage score file
 class Scoreboard
-  FLPATH = File.join(File.dirname('../'), 'score.yml')
+  FILE_PATH = File.join(File.dirname('../'), 'score.yml')
   Row = Struct.new(:name, :tries, :time, :timestamp)
   def initialize
-    @score = File.exist?(FLPATH) ? YAML.load_file(FLPATH) : []
+    @score = File.exist?(FILE_PATH) ? YAML.load_file(FILE_PATH) : []
   end
 
   def add(name, tries, time, timestamp = Time.new)
@@ -21,10 +21,12 @@ class Scoreboard
 
   private
     def write
-      File.write(FLPATH, @score.to_yaml)
+      File.write(FILE_PATH, @score.to_yaml)
     end
 end
 
+# Testing with irb
+# ----------------------------------
 # require_relative 'lib/scoreboard'
 # file = Scoreboard.new
 # file.add('Wesley',2,65) => Integer
