@@ -1,6 +1,7 @@
 load_paths = FileList['spec', 'lib']
 ruby_args = load_paths.pathmap('-I%p')
 
+desc 'test all'
 task all: [:test, :style]
 
 desc 'test'
