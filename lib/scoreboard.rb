@@ -16,7 +16,7 @@ class Scoreboard
   end
 
   def info
-    @score.map { |a| [a[:name], a[:tries], a[:time]] }
+    @score.map { |a| [a.name, a.tries, a.time] }
   end
 
   private
