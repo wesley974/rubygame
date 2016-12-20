@@ -95,7 +95,7 @@ class UserInterface
 
   def countdown(seconds)
     seconds.downto(1) do |s|
-      print s.to_s.center(50)
+      print s.to_s.center(SPACES)
       sleep 1
       print "\r"
     end
