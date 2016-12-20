@@ -99,6 +99,6 @@ class UserInterface
       sleep 1
       print "\r"
     end
-    puts 'Beat the best time!'.center(50)
+    puts 'Beat the best time!'.center(SPACES)
   end
 end
