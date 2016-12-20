@@ -18,3 +18,6 @@ Find quickly a number between 1 and 100.
 
 <h3>Run minitest/rubocop</h3>
 <code>rake all</code>
+
+<h3>Get this help</h3>
+<code>rake -T</code>
