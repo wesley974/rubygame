@@ -17,6 +17,8 @@ class UserInterface
     play
   end
 
+  private
+
   def format(title: nil, msg: nil)
     puts "\n\n#{title.center(SPACES).green.bold}" if title
     puts "#{msg.center(SPACES)}\n" if msg
@@ -78,8 +80,9 @@ class UserInterface
   def new_score
     puts ' New Score !!'.red.bold \
       if @board.add(@name, @player.tries, @player.time)
+    view_score
     PressAnyKey.new
-    UserInterface.new
+    play
   end
 
   def check_winner
