@@ -1,14 +1,11 @@
 load_paths = FileList['spec', 'lib']
 ruby_args = load_paths.pathmap('-I%p')
 
-desc 'test all'
+desc 'Run both test and style checker'
 task all: [:test, :style]
 
-desc 'test'
+desc 'Test (default behaviour)'
 task default: :test
-
-desc 'Run both test and style checker'
-task accept: [:test, :style]
 
 desc 'Minitest gem used for testing'
 task :test do
