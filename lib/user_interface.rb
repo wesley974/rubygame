@@ -66,6 +66,7 @@ class UserInterface
   end
 
   def play
+    countdown(5)
     @player = Core.new
     result = nil
     until result == :win
@@ -90,5 +91,14 @@ class UserInterface
       puts " We have a winner, #{@name}!"
     end
     new_score
+  end
+
+  def countdown(seconds)
+    seconds.downto(1) do |s|
+      print s.to_s.center(50)
+      sleep 1
+      print "\r"
+    end
+    puts 'Beat the best time!'.center(50)
   end
 end
