@@ -1,4 +1,4 @@
-# Format output
+# Format text and table
 module Format
   SPACES = 50
   HEADER = %w(Name Attempts Time!).freeze
