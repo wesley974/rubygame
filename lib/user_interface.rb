@@ -32,6 +32,7 @@ class UserInterface
   def set_name
     try_a_name = ask("\nEnter your name : ").capitalize
     @name = try_a_name unless try_a_name.empty?
+    puts
   end
 
   def ask(question = 'Try? ')
