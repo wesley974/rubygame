@@ -59,10 +59,7 @@ class UserInterface
     countdown(5)
     @player = Core.new
     result = nil
-    until result == :win
-      result = @player.guess(ask_for_number)
-      puts result
-    end
+    puts result = @player.guess(ask_for_number) until result == :win
     check_winner
   end
 
