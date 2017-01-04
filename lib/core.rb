@@ -1,7 +1,6 @@
 # The game core engine
 class Core
   RANGE = 1..100
-
   attr_reader :secret
 
   def initialize
