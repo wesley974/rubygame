@@ -8,7 +8,7 @@ require 'format'
 # The user interface
 class UserInterface
   def initialize
-    trap("INT") {print" received. ";  bybye; exit}
+    trap('INT') { print ' received. '; bybye; exit }
     @name = 'Guest'
     @board = Scoreboard.new
     welcome
@@ -84,7 +84,7 @@ class UserInterface
 
   def countdown(seconds)
     seconds.downto(1) do |s|
-      print s.to_s.rjust(Format::SPACES/2)
+      print s.to_s.rjust(Format::SPACES / 2)
       sleep 1
       print "\r"
     end
