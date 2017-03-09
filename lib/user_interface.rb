@@ -8,6 +8,7 @@ require 'format'
 # The user interface
 class UserInterface
   def initialize
+    trap("INT") {print" received. ";  bybye; exit}
     @name = 'Guest'
     @board = Scoreboard.new
     welcome
@@ -21,7 +22,7 @@ class UserInterface
   def welcome
     Format.text(title: '|Game : The magicians|')
     Format.text(msg: "Find the number between 1 and #{Core::RANGE.max}")
-    Format.text(msg: "You can abandon with the command 'quit'")
+    Format.text(msg: "You can escape with the command 'quit'")
   end
 
   def view_score
@@ -83,7 +84,7 @@ class UserInterface
 
   def countdown(seconds)
     seconds.downto(1) do |s|
-      print s.to_s.center(Format::SPACES)
+      print s.to_s.rjust(Format::SPACES/2)
       sleep 1
       print "\r"
     end
