@@ -8,7 +8,7 @@ require 'format'
 # The user interface
 class UserInterface
   def initialize
-    trap('INT') { print ' received. '; bybye; exit }
+    ctrlc
     @name = 'Guest'
     @board = Scoreboard.new
     welcome
@@ -89,5 +89,12 @@ class UserInterface
       print "\r"
     end
     puts 'Beat the best time!'.center(Format::SPACES)
+  end
+
+  def ctrlc
+    trap('INT') do
+      print ' received. '
+      bybye
+    end
   end
 end
