@@ -93,7 +93,7 @@ class UserInterface
 
   def ctrlc
     trap('INT') do
-      print ' received. '
+      print "\r^C received. "
       bybye
     end
   end
