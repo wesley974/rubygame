@@ -22,11 +22,11 @@ class Core
   end
 end
 
-# Testing with irb
-# --------------------------------------
-# require_relative 'lib/core'
-# player = Core.new => start the engine
-# player.guess(50) => result
-# player.secret => give the secret number!
-# player.tries => get the tries number
-# player.time => get time left in seconds
+# Testing
+if __FILE__ == $PROGRAM_NAME
+  puts player = Core.new # start the engine
+  puts player.secret # the secret number
+  puts player.guess(50) # try the number 50
+  puts player.tries # get the tries number
+  puts player.time # get time left in seconds
+end
