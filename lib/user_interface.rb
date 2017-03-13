@@ -73,7 +73,7 @@ class UserInterface
   end
 
   def check_winner
-    puts "#{@player.tries} attempts in " + @player.time.to_s.red + " seconds!\n"
+    puts @player
     if @player.tries == 1
       puts ' We have found our magician ?!'
     else

@@ -20,4 +20,8 @@ class Core
   def time
     Time.now - @statistics[:start_time]
   end
+
+  def to_s
+    tries.to_s + ' attempts in ' + time.to_s.red + " seconds!\n"
+  end
 end
