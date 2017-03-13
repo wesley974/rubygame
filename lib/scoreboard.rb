@@ -25,10 +25,3 @@ class Scoreboard
     File.write(FILE_PATH, @score.to_yaml)
   end
 end
-
-# Testing with irb
-# ----------------------------------
-# require_relative 'lib/scoreboard'
-# file = Scoreboard.new
-# file.add('Wesley',2,65) => Integer
-# file.info => [[], [], []]
