@@ -3,8 +3,8 @@ class Core
   RANGE = 1..100
   attr_reader :secret
 
-  def initialize
-    @secret = rand(RANGE)
+  def initialize(debug = rand(RANGE))
+    @secret = debug
     @statistics = { tries: 0, start_time: Time.now }
   end
 
@@ -20,13 +20,4 @@ class Core
   def time
     Time.now - @statistics[:start_time]
   end
-end
-
-# Testing
-if __FILE__ == $PROGRAM_NAME
-  puts player = Core.new # start the engine
-  puts player.secret # the secret number
-  puts player.guess(50) # try the number 50
-  puts player.tries # get the tries number
-  puts player.time # get time left in seconds
 end

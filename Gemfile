@@ -6,7 +6,7 @@ gem 'press_any_key'
 gem 'terminal-table'
 
 group :test do
-  gem 'rspec'
   gem 'rake'
+  gem 'rspec'
   gem 'rubocop'
 end
