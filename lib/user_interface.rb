@@ -66,14 +66,14 @@ class UserInterface
 
   def new_score
     puts ' New Score !!'.red.bold \
-      if @board.add(@name, @player.tries, @player.time)
+      if @board.add(@name, @player.tries, @rt)
     view_score
     PressAnyKey.new
     play
   end
 
   def check_winner
-    puts @player
+    info
     if @player.tries == 1
       puts ' We have found our magician ?!'
     else
@@ -96,5 +96,10 @@ class UserInterface
       print "\r^C received. "
       bybye
     end
+  end
+
+  def info
+    @rt = @player.time
+    puts "#{@player.tries} attempts in " + @rt.to_s.red + "seconds!\n"
   end
 end
