@@ -11,6 +11,6 @@ module Format
     table = Terminal::Table.new headings: HEADER, rows: datas
     table.align_column(1, :center)
     table.align_column(2, :center)
-    puts table.render.split("\n").map { |ln| ln.center(50) }.join("\n")
+    puts table.render.split("\n").map { |ln| ln.center(SPACES) }.join("\n")
   end
 end
