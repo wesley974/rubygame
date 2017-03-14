@@ -13,7 +13,7 @@ class UserInterface < System
     @board = Scoreboard.new
     welcome
     set_name
-    view_score
+    Format.table(@board.info)
     play
   end
 
@@ -23,11 +23,6 @@ class UserInterface < System
     Format.text(title: '|Game : The magicians|')
     Format.text(msg: "Find the number between 1 and #{Core::RANGE.max}")
     Format.text(msg: "You can escape with the command 'quit'")
-  end
-
-  def view_score
-    Format.text(msg: '- The Best 3 SCORE -')
-    Format.table(@board.info)
   end
 
   def set_name
@@ -62,7 +57,7 @@ class UserInterface < System
   def new_score
     puts ' New Score !!'.red.bold \
       if @board.add(@name, @player.tries, @rt)
-    view_score
+    Format.table(@board.info)
     press_any_key
     play
   end

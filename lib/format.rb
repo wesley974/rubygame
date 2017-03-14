@@ -11,6 +11,7 @@ module Format
     table = Terminal::Table.new headings: HEADER, rows: datas
     table.align_column(1, :center)
     table.align_column(2, :center)
+    table.title = 'The best 3 SCORE'
     puts table.render.split("\n").map { |ln| ln.center(SPACES) }.join("\n")
   end
 end
