@@ -8,8 +8,6 @@ GEM
     parser (2.4.0.0)
       ast (~> 2.2)
     powerpack (0.1.1)
-    press_any_key (0.0.1)
-      io-console (~> 0.4.2)
     rainbow (2.2.1)
     rake (12.0.0)
     rspec (3.5.0)
@@ -41,7 +39,7 @@ PLATFORMS
 
 DEPENDENCIES
   colored
-  press_any_key
+  io-console
   rake
   rspec
   rubocop

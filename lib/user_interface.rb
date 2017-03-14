@@ -8,7 +8,7 @@ require 'format'
 # The user interface
 class UserInterface
   def initialize
-    ctrlc
+    ctrlc_trap
     @name = 'Guest'
     @board = Scoreboard.new
     welcome
@@ -68,7 +68,7 @@ class UserInterface
     puts ' New Score !!'.red.bold \
       if @board.add(@name, @player.tries, @rt)
     view_score
-    PressAnyKey.new
+    press_a_key
     play
   end
 
@@ -91,15 +91,25 @@ class UserInterface
     puts 'Beat the best time!'.center(Format::SPACES)
   end
 
-  def ctrlc
+  def ctrlc_trap
     trap('INT') do
-      print "\r^C received. "
-      bybye
+      ctrlc_action
     end
+  end
+
+  def ctrlc_action
+    print "\r^C received. "
+    bybye
   end
 
   def info
     @rt = @player.time
     puts "#{@player.tries} attempts in " + @rt.to_s.red + "seconds!\n"
+  end
+
+  def press_a_key
+    puts 'Press any key to continue...'
+    returns = STDIN.getch
+    ctrlc_action if returns == "\u0003"
   end
 end
