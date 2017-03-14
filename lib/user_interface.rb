@@ -68,7 +68,7 @@ class UserInterface < System
   end
 
   def check_winner
-    info
+    info_user
     if @player.tries == 1
       puts ' We have found our magician ?!'
     else
@@ -86,7 +86,7 @@ class UserInterface < System
     puts 'Beat the best time!'.center(Format::SPACES)
   end
 
-  def info
+  def info_user
     @rt = @player.time
     puts "#{@player.tries} attempts in " + @rt.to_s.red + "seconds!\n"
   end
