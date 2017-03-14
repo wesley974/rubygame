@@ -3,10 +3,10 @@ require 'scoreboard'
 require 'terminal-table'
 require 'colored'
 require 'format'
-require 'sys_jobs'
+require 'system'
 
 # The user interface
-class UserInterface < SysJobs
+class UserInterface < System
   def initialize
     ctrlc_trap
     @name = 'Guest'
