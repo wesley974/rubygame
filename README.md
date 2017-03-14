@@ -4,7 +4,7 @@ RubyGame : The magician [![codebeat badge](https://codebeat.co/badges/cba844b3-2
 Find quickly a number between 1 and 100.
 
 #### How to install?
-	doas bundle install
+	doas bundle install # or sudo bundle install (depending your OS)
 
 #### How to run the game?
 	./bin/game
