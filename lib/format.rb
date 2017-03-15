@@ -2,16 +2,20 @@
 module Format
   SPACES = 50
   HEADER = %w(Name Attempts Time!).freeze
-  TITLE = 'The best 3 SCORE'
+  TITLE = 'The best 3 SCORE'.freeze
+
   def self.text(title: nil, msg: nil)
     puts "\n\n#{title.center(SPACES).green.bold}" if title
     puts "#{msg.center(SPACES)}\n" if msg
   end
 
-  def self.table(datas)
-    table = Terminal::Table.new title: TITLE, headings: HEADER, rows: datas
-    table.align_column(1, :center)
-    table.align_column(2, :center)
-    puts table.render.split("\n").map { |ln| ln.center(SPACES) }.join("\n")
+  def self.table(datas, winner: false)
+    t = Terminal::Table.new(title: TITLE, headings: HEADER, rows: datas)
+    1.upto(2) { |x| t.align_column(x, :center) }
+    puts t.render.split("\n").map { |ln|
+      ln = ln.center(SPACES).green.bold \
+      if winner && ln.include?(winner[0].to_s) && ln.include?(winner[1].to_s)
+      ln.center(SPACES)
+    }.join("\n")
   end
 end

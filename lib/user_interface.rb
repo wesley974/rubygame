@@ -57,7 +57,7 @@ class UserInterface < System
   def new_score
     puts ' New Score !!'.red.bold \
       if @board.add(@name, @player.tries, @rt)
-    Format.table(@board.info)
+    Format.table(@board.info, winner: [@rt, @name])
     press_any_key
     play
   end
