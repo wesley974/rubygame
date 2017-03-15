@@ -65,7 +65,7 @@ class UserInterface < System
   def check_winner
     info_user
     if @player.tries == 1
-      puts ' We have found our magician ?!'
+      puts ' We have found our magician ?!'.magenta_on_white
     else
       puts " We have a winner, #{@name}!"
     end
