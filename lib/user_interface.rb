@@ -83,6 +83,6 @@ class UserInterface < System
 
   def info_user
     @rt = @player.time
-    puts "#{@player.tries} attempts in " + @rt.to_s.red + "seconds!\n"
+    puts "#{@player.tries} attempts in " + @rt.to_s.red + " seconds!\n"
   end
 end
