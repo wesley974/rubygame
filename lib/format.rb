@@ -19,7 +19,7 @@ module Format
 
   def self.table_line(ln, winner)
     ln = ln.center(SPACES).green.bold \
-      if winner && ln.include?(winner[0].to_s) && ln.include?(winner[1].to_s)
+      if winner && winner.all? { |e| ln.include?(e.to_s) }
     ln.center(SPACES)
   end
 end
