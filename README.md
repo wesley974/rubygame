@@ -23,3 +23,7 @@ Testing
 
 #### Get this help
 	rake -T
+	
+>*Enjoy!*
+
+You like the project? You wish updates? So why not support it adding a star (★).
