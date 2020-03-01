@@ -6,7 +6,7 @@ gem 'io-console'
 gem 'terminal-table'
 
 group :test do
-  gem 'rake'
+  gem "rake", ">= 12.3.3"
   gem 'rspec'
   gem 'rubocop'
 end
